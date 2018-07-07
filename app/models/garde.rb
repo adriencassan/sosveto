@@ -1,0 +1,2 @@
+class Garde < ApplicationRecord
+end
