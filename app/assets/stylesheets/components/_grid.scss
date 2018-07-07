@@ -1,0 +1,65 @@
+.grid {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+
+.grid-row-header {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: $gray;
+}
+
+.grid-rows {
+  height: 50vh;
+  padding: Opx;
+  margin:0px;
+  overflow: scroll;
+}
+
+.grid-items {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.grid-row {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background: linear-gradient(rgba(244, 244, 244,0.6), rgba(244, 244, 244,0.3));
+  position: relative;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px 1px grey;
+}
+
+.grid-row-nude {
+   background: none !important;
+  box-shadow: none !important;
+}
+
+.grid-row h5{
+  font-size: 10px;
+  margin: 0px;
+}
+
+.grid-row p{
+  font-size: 10px;
+  margin: 0px;
+  font-weight: lighter;
+  overflow: none;
+}
+
+.grid-pagination {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+
