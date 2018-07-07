@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180707051223) do
+ActiveRecord::Schema.define(version: 20180707113707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cliniques", force: :cascade do |t|
+    t.string "nom"
+    t.string "veterinaires"
+    t.string "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "consultations", force: :cascade do |t|
+    t.bigint "garde_id"
+    t.bigint "clinique_id"
+    t.string "client_nom"
+    t.string "client_adresse"
+    t.string "client_mail"
+    t.string "animal_nom"
+    t.string "animal_espece"
+    t.integer "animal_ageA"
+    t.integer "animal_ageM"
+    t.string "animal_sexe"
+    t.string "consultation_motif"
+    t.string "consultation_commentaires"
+    t.string "consultation_ttm"
+    t.string "consultation_suites"
+    t.string "consultation_etat_general"
+    t.string "consultation_etat_appetit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinique_id"], name: "index_consultations_on_clinique_id"
+    t.index ["garde_id"], name: "index_consultations_on_garde_id"
+  end
+
+  create_table "gardes", force: :cascade do |t|
+    t.string "titre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +69,6 @@ ActiveRecord::Schema.define(version: 20180707051223) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "consultations", "cliniques"
+  add_foreign_key "consultations", "gardes"
 end
