@@ -5,6 +5,8 @@ class CreateConsultations < ActiveRecord::Migration[5.1]
       t.references :clinique, foreign_key: true
       t.string :client_nom
       t.string :client_adresse
+      t.string :client_ville
+      t.string :client_telephone
       t.string :client_mail
       t.string :animal_nom
       t.string :animal_espece
