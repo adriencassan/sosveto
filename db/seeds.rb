@@ -45,5 +45,5 @@ Garde.create(id: 3, titre: "Nuit du 03 au 04 Aout 2017")
 #Seed
 
 20.times do
-  Consultation.create(clinique: Clinique.all.sample, garde: Garde.all.sample ,client_nom:Faker::Name.name ,client_adresse:Faker::Address.full_address,client_mail:Faker::Internet.email,animal_nom:Faker::Dog.name,animal_espece:"Chien",animal_ageA:(1..10).to_a.sample,animal_ageM:0,animal_sexe:["Male","Female"].sample,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_ttm:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph,consultation_etat_general:"En forme",consultation_etat_appetit:["Anorexie","Normal","Boulime"].sample)
+  Consultation.create(clinique: Clinique.all.sample, garde: Garde.all.sample ,client_nom:Faker::Name.name ,client_adresse:Faker::Address.full_address, client_ville:  Faker::Address.city, client_telephone:  Faker::PhoneNumber.phone_number, client_mail:Faker::Internet.email,animal_nom:Faker::Dog.name,animal_espece:"Chien",animal_ageA:(1..10).to_a.sample,animal_ageM:0,animal_sexe:["Male","Female"].sample,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_ttm:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph,consultation_etat_general:"En forme",consultation_etat_appetit:["Anorexie","Normal","Boulime"].sample)
 end
