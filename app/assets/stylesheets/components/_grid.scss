@@ -1,9 +1,11 @@
+// container for all grids
 .grid {
   margin-top: 20px;
   padding: 0 20px;
 }
 
 
+// header
 .grid-row-header {
   display: flex;
   align-items: center;
@@ -16,6 +18,7 @@
   background: $gray;
 }
 
+// container to display rows
 .grid-rows {
   height: 50vh;
   padding: Opx;
@@ -23,11 +26,8 @@
   overflow: scroll;
 }
 
-.grid-items {
-  overflow-y: scroll;
-  max-height: 500px;
-}
 
+// row
 .grid-row {
   display: flex;
   align-items: center;
@@ -37,11 +37,6 @@
   padding: 5px;
   margin-bottom: 10px;
   box-shadow: 2px 2px 2px 1px grey;
-}
-
-.grid-row-nude {
-   background: none !important;
-  box-shadow: none !important;
 }
 
 .grid-row h5{
@@ -56,10 +51,12 @@
   overflow: none;
 }
 
-.grid-pagination {
-  display: flex;
-  justify-content: space-around;
-  font-size: 12px;
+// Buttons
+.btn-grid-sm {
+  width: 60px;
+  height: 20px;
+  padding: 2px;
+  font-size: 10px;
 }
 
 

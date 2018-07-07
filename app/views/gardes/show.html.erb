@@ -1,6 +1,6 @@
 <div class="main-container">
 
-  <h4 class="text-center">Consultation du XX/XX/XXXX</h4>
+  <h4 class="text-center"><%= @garde.titre %></h4>
 
   <div class="grid">
 
@@ -28,8 +28,9 @@
             <h5><%= consultation.animal_nom %></h5>
             <p><%= consultation.animal_espece %></p>
           </div>
-            <div class="col-xs-2">
-            </div>
+          <div class="col-xs-2">
+            <%= link_to "Modifier", edit_garde_consultation_path(consultation.garde), class:"btn btn-primary btn-grid-sm"%>
+          </div>
         </div>
       <% end %>
 
