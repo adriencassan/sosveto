@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180707113707) do
     t.bigint "clinique_id"
     t.string "client_nom"
     t.string "client_adresse"
+    t.string "client_ville"
+    t.string "client_telephone"
     t.string "client_mail"
     t.string "animal_nom"
     t.string "animal_espece"

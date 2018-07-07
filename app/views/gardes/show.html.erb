@@ -1,0 +1,49 @@
+<div class="main-container">
+
+  <h4 class="text-center">Consultation du XX/XX/XXXX</h4>
+
+  <div class="grid">
+
+     <div class="row grid-row grid-row-nude">
+        <div class="col-xs-4 col-md-7"></div>
+        <div class="col-xs-4 text-right"><p>Ajouter un nouvel investisseur</p></div>
+        <div class="col-xs-1"></div>
+    </div>
+
+
+    <div class="row grid-row-header">
+      <div class="col-xs-4 col-md-2">Client</div>
+      <div class="col-xs-2">Ville</div>
+      <div class="col-xs-2">Clinique</div>
+      <div class="col-xs-2">Animal</div>
+      <div class="col-xs-2"></div>
+    </div>
+
+<div class="grid-rows">
+      <% @consultations.each do |consultation| %>
+        <div class="row grid-row">
+          <div class="col-xs-4">
+            <h5><%= consultation.client_nom %></h5></div>
+            <p><%= consultation.client_telephone %></p>
+          </div>
+          <div class="col-xs-1">
+            <p><%= consultation.client_ville %></p>
+          </div>
+          <div class="col-xs-1">
+            <p><%= consultation.clinique.nom %></p>
+          </div>
+          <div class="col-xs-1">
+            <h5><%= consultation.animal_nom %></h5>
+            <p><%= consultation.animal_espece %></p>
+          </div>
+            <div class="col-xs-2">
+            </div>
+        </div>
+      <% end %>
+</div>
+
+  </div>
+
+
+</div>
+
