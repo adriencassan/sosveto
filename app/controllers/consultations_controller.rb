@@ -6,7 +6,23 @@ class ConsultationsController < ApplicationController
 
   def edit
     @garde = Garde.find(params[:garde_id])
+    @consultation = Consultation.new
+  end
+
+  def edit
+    @garde = Garde.find(params[:garde_id])
     @consultation = Consultation.find(params[:id])
+  end
+
+  def create
+    @garde = Garde.find(params[:garde_id])
+    @consultation = Consultation.new(consultation_params)
+    @consultation.garde = @garde
+    if @consultation.save!
+      redirect_to garde_path(@garde)
+    else
+      render 'form', @consultation
+    end
   end
 
   def update
