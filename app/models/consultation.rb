@@ -4,6 +4,6 @@ class Consultation < ApplicationRecord
 
 
   def client_clinique
-    Clinique.find(self.client_clinique_id)
+    self.client_clinique_id.nil? ? Clinique.find(1) : Clinique.find(self.client_clinique_id)
   end
 end
