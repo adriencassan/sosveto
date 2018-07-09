@@ -38,10 +38,7 @@ ActiveRecord::Schema.define(version: 20180707113707) do
     t.string "animal_sexe"
     t.string "consultation_motif"
     t.string "consultation_commentaires"
-    t.string "consultation_ttm"
     t.string "consultation_suites"
-    t.string "consultation_etat_general"
-    t.string "consultation_etat_appetit"
     t.string "statut_envoi", default: "Non-envoyée"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
