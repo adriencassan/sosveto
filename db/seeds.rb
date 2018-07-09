@@ -40,10 +40,14 @@ Clinique.create(id: 44, nom: "Clin. Samatha", veterinaires: "Charrière", mail: 
 Garde.create(id: 1, titre: "15 Aout (du 14 du 16 aout 2017)")
 Garde.create(id: 2, titre: "Nuit du 01 au 02 Juin 2016")
 Garde.create(id: 3, titre: "Nuit du 03 au 04 Aout 2017")
+Garde.create(id: 49, titre: "We du 12 au 13 Mai 2018")
 
 
-#Seed
+#Seed Faker
 
 20.times do
   Consultation.create(client_clinique_id: Clinique.all.pluck(:id).sample, garde: Garde.all.sample ,client_nom:Faker::Name.name ,client_adresse:Faker::Address.full_address, client_ville:  Faker::Address.city, client_telephone:  Faker::PhoneNumber.phone_number, client_mail:Faker::Internet.email,animal_nom:Faker::Dog.name,animal_espece:"Chien",animal_ageA:(1..10).to_a.sample,animal_ageM:0,animal_sexe:["Male","Female"].sample,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph)
 end
+
+
+

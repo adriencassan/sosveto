@@ -4,7 +4,7 @@ class GardesController < ApplicationController
   end
 
   def show
-    @garde = Garde.find(params[:id])
+    @garde = Garde.find(1)
     @consultations = @garde.consultations
   end
 end
