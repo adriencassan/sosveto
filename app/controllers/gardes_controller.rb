@@ -1,6 +1,6 @@
 class GardesController < ApplicationController
   def index
-    Gardes.all
+    Garde.all
   end
 
   def show

@@ -1,0 +1,63 @@
+.container-form {
+  margin-top: 90px;
+  border: solid;
+  border-width: 1px;
+  border-color: $brand-primary;
+  background-color: white;
+  width: 900;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-width: 3px;
+  padding: 10px;
+  font-size: 12px;
+
+
+}
+
+ .container-form  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
+.from-control-lg {
+  height: 60px;
+}
+
+
+.btn-form-sm {
+  width: 60px;
+  height: 20px;
+  padding: 2px;
+  font-size: 10px;
+}
+
+
+.btn-form-lg {
+  width: 80px;
+  height: 30px;
+  margin-right: 20px;
+  padding: 4px;
+  font-size: 12px;
+}
+
+.form-control {
+   font-size: 12px;
+}
+
+
+.form-row {
+  margin-bottom: 5px;
+}
+
+.form-tabs {
+  margin: 10px;
+}
+
+.form-tab-content {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top-color: transparent;
+  min-height: 300px;
+
+}

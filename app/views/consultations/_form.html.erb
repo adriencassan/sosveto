@@ -1,0 +1,112 @@
+
+
+ <div class="main-container">
+
+
+  <div class="container container-form">
+    <h2 class="text-center">Formulaire Consultation</h2>
+
+    <%= simple_form_for [@garde, @consultation] do |f| %>
+    <%= f.error_notification %>
+
+      <div class="row">
+      <div class="form-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item active">
+            <a class="nav-link active" id="client-tab" data-toggle="tab" href="#client" role="tab" aria-controls="client" aria-selected="true">Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="animal-tab" data-toggle="tab" href="#animal" role="tab" aria-controls="animal" aria-selected="false">Animal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="consultation-tab" data-toggle="tab" href="#consultation" role="tab" aria-controls="consultation" aria-selected="false">Consultation</a>
+          </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+
+          <!-- Tab "Home" -->
+          <div class="tab-pane fade active in" id="client" role="tabpanel" aria-labelledby="client-tab">
+            <div class="form-tab-content">
+              <div class="row">
+                  <%= f.label "Nom du client", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :client_nom, label: false, placeholder: "Nom du client", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Adresse", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :client_adresse, label: false, placeholder: "Adresse", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Ville", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :client_ville, label: false, placeholder: "Ville", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Telephone", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :client_telephone, label: false, placeholder: "Telephone", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Mail", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :client_mail, label: false, placeholder: "Mail", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "CLinique référente", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :client_clinique_id, collection: Clinique.all.pluck(:id, :nom), label_method: :second, value_method: :first,label: false, placeholder: "CLinique",selected: consultation.client_clinique.id, wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+
+              </div>
+            </div>
+          </div>
+
+         <!-- Tab "Terms" -->
+          <div class="tab-pane fade" id="animal" role="tabpanel" aria-labelledby="animal-tab">
+            <div class="form-tab-content">
+              <div class="row">
+
+                  <%= f.label "Nom", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :animal_nom, label: false, placeholder: "Nom", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Espece", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :animal_espece, label: false, placeholder: "Espece", collection: ["Chien","Chat","Nac"], wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Sexe", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :animal_sexe, label: false, placeholder: "Sexe", collection: ["Male","Femelle"], wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Age (A)", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :animal_ageA, label: false, placeholder: "Age (A)", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+                  <%= f.label "Age (M)", class: "col-xs-4 col-sm-2" %>
+                  <%= f.input :animal_ageM, label: false, placeholder: "Age (M)", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
+
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab consultation -->
+          <div class="tab-pane fade" id="consultation" role="tabpanel" aria-labelledby="consultation-tab">
+            <div class="form-tab-content">
+              <div class="row">
+
+                <%= f.label "Motif de la consultation :", class: "col-xs-12" %>
+                <%= f.input :consultation_motif, label: false, placeholder: "Entrez votre texte ici", as: :text, autofocus: true, input_html: {rows: 5}, wrapper_html: {class: "col-xs-12"} %>
+
+                <%= f.label "Commentaires :", class: "col-xs-12" %>
+                  <%= f.input :consultation_commentaires, label: false, placeholder: "Entrez votre texte ici", as: :text, autofocus: true, input_html: {rows: 5}, wrapper_html: {class: "col-xs-12"} %>
+
+                <%= f.label "Suites du protocole :", class: "col-xs-12" %>
+                  <%= f.input :consultation_suites, label: false, placeholder: "Entrez votre texte ici", as: :text, autofocus: true, input_html: {rows: 5}, wrapper_html: {class: "col-xs-12"} %>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="actions col-xs-6 offset-xs-3">
+        <%= f.submit "Enregistrer", class: "btn btn-primary btn-form-lg" %>
+        <%= link_to "Retour", :back, class: "btn btn-primary btn-form-lg"  %>
+      </div>
+
+    <%end%>
+
+  </div>
+</div>
+
+

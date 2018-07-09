@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20180707113707) do
 
   create_table "consultations", force: :cascade do |t|
     t.bigint "garde_id"
-    t.bigint "clinique_id"
     t.string "client_nom"
     t.string "client_adresse"
     t.string "client_ville"
     t.string "client_telephone"
     t.string "client_mail"
+    t.bigint "client_clinique_id"
     t.string "animal_nom"
     t.string "animal_espece"
     t.integer "animal_ageA"
@@ -42,9 +42,10 @@ ActiveRecord::Schema.define(version: 20180707113707) do
     t.string "consultation_suites"
     t.string "consultation_etat_general"
     t.string "consultation_etat_appetit"
+    t.string "statut_envoi", default: "Non-envoyée"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clinique_id"], name: "index_consultations_on_clinique_id"
+    t.index ["client_clinique_id"], name: "index_consultations_on_client_clinique_id"
     t.index ["garde_id"], name: "index_consultations_on_garde_id"
   end
 
@@ -71,6 +72,6 @@ ActiveRecord::Schema.define(version: 20180707113707) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "consultations", "cliniques"
+  add_foreign_key "consultations", "cliniques", column: "client_clinique_id"
   add_foreign_key "consultations", "gardes"
 end
