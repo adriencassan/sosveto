@@ -1,0 +1,43 @@
+.menusbar-wrapper {
+  padding: 20px 10px;
+  //height: 50px;
+  //width:  100%;
+  //background: $theme-foreground;
+  //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07), 0 1px 0 0 rgba(0,0,0,0.03);
+  //overflow: scroll;
+  h3 {
+    color: $dark-gray;
+  }
+
+  h4 {
+    color: $dark-gray;
+  }
+}
+
+
+.menu-item {
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 16px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  i {
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: $dark-gray;
+  }
+
+  a {
+   color: $dark-gray;
+  }
+
+
+
+}

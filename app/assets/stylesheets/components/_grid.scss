@@ -1,21 +1,28 @@
 // container for all grids
 .grid {
-  margin-top: 20px;
-  padding: 0 20px;
+  //margin-top: 20px;
+  //padding: 0 20px;
+  //margin: 0px !important;
 }
 
+.row {
+   margin: 0px ;
+   align-items: center;
+}
 
 // header
 .grid-row-header {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 40px;
+  border-radius: 20px;
   padding: 5px;
   margin-bottom: 10px;
   font-size: 14px;
-  font-weight: bold;
+  //font-weight: bold;
   color: white;
-  background: $gray;
+ //border-bottom: 1pt solid $dark-gray;
+  background: $theme-dark;
 
 }
 
@@ -48,31 +55,34 @@
 .grid-row {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 40px;
+  border-radius: 20px;
   background: linear-gradient(rgba(244, 244, 244,0.6), rgba(244, 244, 244,0.3));
   position: relative;
   padding: 5px;
   margin-bottom: 10px;
-  box-shadow: 2px 2px 2px 1px grey;
+  //box-shadow: 2px 2px 2px 1px grey;
 }
 
 .grid-row h5{
-  font-size: 10px;
+  font-size: 12px;
   margin: 0px;
 }
 
 .grid-row p{
-  font-size: 10px;
+  font-size: 12px;
   margin: 0px;
   font-weight: lighter;
   overflow: none;
 }
 
 // Buttons
-.btn-grid-sm {
-  width: 60px;
-  height: 20px;
-  padding: 2px;
+.grid-btns
+
+  .md-btn {
+  //width: 60px;
+  //height: 20px;
+  padding: 10px;
   font-size: 10px;
 }
 

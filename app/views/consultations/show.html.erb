@@ -1,0 +1,52 @@
+<div class="main-container">
+  <div class="top-container">
+    <%= render 'shared/topbar' %>
+  </div>
+
+  <div class="page-container">
+    <div class="right-menus-container">
+      <%= render 'shared/menusbar' %>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="grid">
+          <div class="row">
+            <div class="col-xs-4"><%= @garde.titre %></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-container-split">
+       <div class="content-container-left">
+
+        <div class="up-content">
+          <div class="up-content-row">
+            <h4>Poupette</h4>
+            <h5>Mme Adam</h4>
+          </div>
+
+          <div class="up-content-row">
+            <div class="up-content-avatar">
+               <%= image_tag "dog.png", height: 40, padding: 10  %>
+            </div>
+          </div>
+        </div>
+        <div class="down-content">
+            <%= render "consultations/menu" %>
+        </div>
+      </div>
+
+       <div class="content-container-right">
+          <div class="card">
+            <%= render 'consultations/form', garde: @garde, consultation: @consultation %>
+          </div>
+        </div>
+
+       </div>
+    </div>
+
+  </div>
+</div>

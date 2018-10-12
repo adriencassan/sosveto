@@ -1,0 +1,30 @@
+
+.nav-tabs {
+  padding: 5px 0;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+
+  a {
+    border: none !important;
+  }
+}
+.nav-item {
+  width: 100px;
+  border: 2px solid $theme-background;
+  border-radius: 10px;
+  margin-right: 10px;
+  text-align: center;
+
+
+
+}
+
+ .nav-item.active {
+  width: 100px;
+  color: white;
+  background: $theme-background;
+  border-radius: 10px;
+  margin-right: 10px;
+
+}

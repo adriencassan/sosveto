@@ -4,6 +4,11 @@ class ConsultationsController < ApplicationController
     Consultation.where(garde: params[:id])
   end
 
+  def show
+    @garde = Garde.find(params[:garde_id])
+    @consultation = Consultation.find(params[:id])
+  end
+
   def new
     @garde = Garde.find(params[:garde_id])
     @consultation = Consultation.new

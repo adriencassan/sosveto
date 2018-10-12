@@ -1,17 +1,9 @@
 .container-form {
-  margin-top: 90px;
-  border: solid;
-  border-width: 1px;
-  border-color: $brand-primary;
   background-color: white;
   width: 900;
-  margin-top: 50px;
   margin-bottom: 50px;
   border-width: 3px;
-  padding: 10px;
   font-size: 12px;
-
-
 }
 
  .container-form  h2 {
@@ -19,11 +11,15 @@
     font-weight: bold;
   }
 
+.form-control {
+  height: 40px;
+  border-radius: 20px;
+}
 
 .from-control-lg {
   height: 60px;
+  border-radius: 30px;
 }
-
 
 .btn-form-sm {
   width: 60px;
@@ -31,7 +27,6 @@
   padding: 2px;
   font-size: 10px;
 }
-
 
 .btn-form-lg {
   width: 80px;
@@ -56,8 +51,52 @@
 
 .form-tab-content {
   padding: 10px;
-  border: 1px solid #ddd;
+  //border: 1px solid #ddd;
   border-top-color: transparent;
   min-height: 300px;
 
 }
+
+
+// Form custom with icon and input
+.form-app-control-wrapper{
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color:   rgba(220,220,220,0.6);
+  border-radius: 25px;
+  display: flex;
+
+  .form-control {
+    border-style: none;
+    background: transparent;
+    box-shadow: none;
+    height: 40px;
+    margin:0;
+    width: 100%;
+  }
+
+  .form-app-control-icon {
+    padding: 0 5px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .form-app-control-input{
+    border-style: none;
+    height: 40px;
+    margin:0;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .form-app-control-btns{
+    width: 100%;
+  }
+}
+
+.form-app-control-wrapper.no-background {
+  background: transparent !important;
+}
+
+

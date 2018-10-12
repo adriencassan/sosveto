@@ -1,13 +1,43 @@
-<div class="container">
-<h1>Gardes#index</h1>
-<p>Find me in app/views/gardes/index.html.erb</p>
+<div class="main-container">
+  <div class="top-container">
+    <%= render 'shared/topbar' %>
+  </div>
 
-<ul>
-<% @consultation.each do %>
-<li><%= consultation.animal_name %></li>
+  <div class="page-container">
 
+    <div class="right-menus-container">
+      <%= render 'shared/menusbar' %>
+    </div>
 
-<%end%>
-</ul>
+    <div class="content-wrapper">
 
+      <div class="content-container">
+      <div class="card">
+        <h4>Listes des gardes</h4>
+        <div class="grid">
+          <div class="row grid-row-header">
+            <div class="col-xs-4">Client</div>
+            <div class="col-xs-4">Vétérinaire de Garde</div>
+            <div class="col-xs-4"></div>
+          </div>
+          <% @gardes.each do |garde| %>
+            <div class="row grid-row">
+              <div class="col-xs-4"><h5><%= garde.titre %></h5></div>
+              <div class="col-xs-4">
+                <div class="" style="font-size: 12px"><img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar sm avatar-margin-right">Pierre-Alexis Cassan</div>
+              </div>
+              <div class="col-xs-4">
+                <div class="grid-btns">
+                  <%= link_to garde_path(garde), class:"btn btn-icon" do%><i class="fas fa-plus-circle"></i><%end%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
