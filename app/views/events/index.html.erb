@@ -1,0 +1,24 @@
+<div class="main-container">
+  <div class="top-container">
+    <%= render 'shared/topbar' %>
+  </div>
+
+  <div class="page-container">
+
+    <div class="right-menus-container">
+      <%= render 'shared/menusbar' %>
+    </div>
+
+    <div class="content-wrapper">
+      <% @events.each do |event| %>
+        <div class="content-container">
+          <div class="card">
+            <h4><%= event.title %></h4>
+            <p><%= event.content %></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, facilis, repudiandae. Necessitatibus, magni quod ab rerum labore veritatis dicta iure eius nostrum. Quos, molestias, unde? Molestiae sit deserunt omnis, sint!</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

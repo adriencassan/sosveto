@@ -1,14 +1,6 @@
-
-
-
-
-
-
 <div class="container-form">
-    <%= simple_form_for [@garde, @consultation] do |f| %>
-    <%= f.error_notification %>
-
-      <div class="row">
+  <div class="tabs-container">
+    <div class="row">
       <div class="form-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item active">
@@ -20,15 +12,21 @@
           <li class="nav-item">
             <a class="nav-link" id="consultation-tab" data-toggle="tab" href="#consultation" role="tab" aria-controls="consultation" aria-selected="false">Consultation</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" id="transmission-tab" data-toggle="tab" href="#transmission" role="tab" aria-controls="consultation" aria-selected="false">Transmission</a>
+          </li>
         </ul>
+        </div>
 
+        <div class="content-container">
         <div class="tab-content" id="myTabContent">
 
           <!-- Tab "Home" -->
           <div class="tab-pane fade active in" id="client" role="tabpanel" aria-labelledby="client-tab">
             <div class="form-tab-content">
               <div class="row">
+                <%= simple_form_for [@garde, @consultation] do |f| %>
+                  <%= f.error_notification %>
                   <%= f.label "Nom du client", class: "col-xs-4 col-sm-2" %>
                   <%= f.input :client_nom, label: false, placeholder: "Nom du client", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
 
@@ -49,6 +47,13 @@
 
 
               </div>
+
+              <div class="row">
+                <div class="actions col-xs-8"></div>
+                <div class="actions col-xs-4 text-right">
+                    <%= f.submit "Enregistrer", class: "btn btn-round btn-md btn-theme-dark" %>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -56,23 +61,6 @@
           <div class="tab-pane fade" id="animal" role="tabpanel" aria-labelledby="animal-tab">
             <div class="form-tab-content">
               <div class="row">
-
-                  <%= f.label "Nom", class: "col-xs-4 col-sm-2" %>
-                  <%= f.input :animal_nom, label: false, placeholder: "Nom", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
-
-                  <%= f.label "Espece", class: "col-xs-4 col-sm-2" %>
-                  <%= f.input :animal_espece, label: false, placeholder: "Espece", collection: ["Chien","Chat","Nac"], wrapper_html: {class: "col-xs-8 col-sm-10"} %>
-
-                  <%= f.label "Sexe", class: "col-xs-4 col-sm-2" %>
-                  <%= f.input :animal_sexe, label: false, placeholder: "Sexe", collection: ["Male","Femelle"], wrapper_html: {class: "col-xs-8 col-sm-10"} %>
-
-                  <%= f.label "Age (A)", class: "col-xs-4 col-sm-2" %>
-                  <%= f.input :animal_ageA, label: false, placeholder: "Age (A)", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
-
-                  <%= f.label "Age (M)", class: "col-xs-4 col-sm-2" %>
-                  <%= f.input :animal_ageM, label: false, placeholder: "Age (M)", wrapper_html: {class: "col-xs-8 col-sm-10"} %>
-
-
               </div>
             </div>
           </div>
@@ -82,15 +70,6 @@
             <div class="form-tab-content">
               <div class="row">
 
-                <%= f.label "Motif de la consultation :", class: "col-xs-12" %>
-                <%= f.input :consultation_motif, label: false, placeholder: "Entrez votre texte ici", as: :text, autofocus: true, input_html: {rows: 5}, wrapper_html: {class: "col-xs-12"} %>
-
-                <%= f.label "Commentaires :", class: "col-xs-12" %>
-                  <%= f.input :consultation_commentaires, label: false, placeholder: "Entrez votre texte ici", as: :text, autofocus: true, input_html: {rows: 5}, wrapper_html: {class: "col-xs-12"} %>
-
-                <%= f.label "Suites du protocole :", class: "col-xs-12" %>
-                  <%= f.input :consultation_suites, label: false, placeholder: "Entrez votre texte ici", as: :text, autofocus: true, input_html: {rows: 5}, wrapper_html: {class: "col-xs-12"} %>
-
               </div>
             </div>
           </div>
@@ -98,10 +77,8 @@
         </div>
       </div>
 
-      <div class="actions col-xs-6 offset-xs-3">
-        <%= f.submit "Enregistrer", class: "btn btn-primary btn-form-lg" %>
-        <%= link_to "Retour", :back, class: "btn btn-primary btn-form-lg"  %>
-      </div>
+
+    </div>
 
     <%end%>
 

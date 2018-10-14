@@ -12,7 +12,7 @@
       <div class="content-header">
         <div class="grid">
           <div class="row">
-            <div class="col-xs-4"><%= @garde.titre %></div>
+            <div class="col-xs-4"><h4><%= @garde.titre %></h4></div>
             <div class="col-xs-4"></div>
             <div class="col-xs-4"></div>
           </div>
@@ -54,7 +54,7 @@
                   <h5><%= consultation.statut_envoi %></h5>
                 </div>
                 <div class="col-xs-2">
-                  <%= link_to "Modifier", garde_consultation_path(@garde, consultation), class:"btn btn-primary btn-grid-sm"%>
+                  <%= link_to "Ouvrir", garde_consultation_path(@garde, consultation), class:"btn btn-theme-dark btn-round"%>
                 </div>
               </div>
             <% end %>

@@ -12,7 +12,7 @@
       <div class="content-header">
         <div class="grid">
           <div class="row">
-            <div class="col-xs-4"><%= @garde.titre %></div>
+            <div class="col-xs-4"><h4><%= @garde.titre %></h4></div>
             <div class="col-xs-4"></div>
             <div class="col-xs-4"></div>
           </div>
@@ -24,7 +24,7 @@
 
         <div class="up-content">
           <div class="up-content-row">
-            <h4>Poupette</h4>
+            <h4><%= @consultation.animal_nom%></h4>
             <h5>Mme Adam</h4>
           </div>
 
@@ -39,10 +39,8 @@
         </div>
       </div>
 
-       <div class="content-container-right">
-          <div class="card">
+       <div class="content-wrapper-right">
             <%= render 'consultations/form', garde: @garde, consultation: @consultation %>
-          </div>
         </div>
 
        </div>

@@ -34,37 +34,46 @@
       box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07), 0 1px 0 0 rgba(0,0,0,0.03);
       height: calc(100vh - 60px) ;
       width: 140px;
-      padding-left: 10px;
       font-size: 12px;
       color: $dark-gray;
       display: flex;
+      justify-content: space-around;
 
     }
 
     .content-wrapper {
       //display: none;
+      padding-top: 30px;
+      width: calc(100vw - 140px);
 
       .content-header {
         background-color: $theme-dark;
-        margin: 30px 30px;
+        margin: 0 30px 10px 30px;
         padding: 10px;
-        width: calc(100vw - 200px);
+        //width: 100%;
         border-radius: 10px;
         height: 40px;
+
+        h4 {
+          margin: 0;
+          color: white;
+          font-weight: bold;
+          font-size: 20px;
+        }
       }
 
       .content-container {
         background-color: $theme-foreground;
         margin: 0 30px;
         padding: 10px;
-        width: calc(100vw - 200px);
+        //width: calc(100vw - 230px);
         border-radius: 10px;
-        height: 100%;
+        max-height: calc(100vh - 120px);
         overflow: scroll;
       }
 
       .content-container.with-header {
-        height: calc(100vh - 180px);
+        height: calc(100vh - 170px);
       }
 
       .content-container-split {
@@ -75,19 +84,17 @@
       .content-container-left {
         background-color: $theme-foreground;
         margin: 0 30px;
-        //padding: 10px;
         width: 500px;
         border-radius: 10px;
         height: 100%;
         overflow: scroll;
-        height: calc(100vh - 180px);
+        height: calc(100vh - 170px);
 
         .up-content {
           background-color: $theme-dark;
-          height: 200px;
-          //display: flex;
+          height: 150px;
           justify-content: space-around;
-          padding-top: 50px;
+          padding-top: 10px;
         }
 
         .up-content-row {
@@ -96,7 +103,7 @@
           color: white;
           //align-self: flex-end;
           text-align: center;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
 
 
           h4 {
@@ -117,6 +124,7 @@
           background-color: white;
           border-radius: 50%;
           margin-left: 130px;
+          margin-bottom: 40px;
 
           img {
             height: 80px;
@@ -124,6 +132,46 @@
           }
         }
 
+        .down-content{
+          padding-top: 30px;
+        }
+
+      }
+
+      .content-wrapper-right{
+        background-color: $theme-background;
+        margin: 0;
+        //padding: 10px;
+        width: 100%;
+        //border-radius: 10px;
+        height: 100%;
+        //overflow: scroll;
+        height: calc(100vh - 170px);
+
+
+
+        .actions-container {
+          height: 50px;
+
+        }
+
+        .tabs-container {
+          background-color: $medium-gray;
+          height: 70px;
+          border-radius: 10px 10px 0 0;
+
+        }
+
+        .content-container{
+          background-color: $theme-foreground;
+          margin: 0;
+          //padding: 10px;
+          width: 100%;
+          border-radius: 0 0 10px 10px;
+          //height: 100%;
+          overflow: scroll;
+          height: calc(100vh - 230px);
+        }
       }
 
       .content-container-right{
@@ -134,7 +182,7 @@
         border-radius: 10px;
         height: 100%;
         overflow: scroll;
-        height: calc(100vh - 180px);
+        height: calc(100vh - 210px);
       }
 
     }

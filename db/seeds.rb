@@ -50,4 +50,7 @@ Garde.create(id: 49, titre: "We du 12 au 13 Mai 2018")
 end
 
 
+# Event
+Event.create(title: "Bienvenue sur sos-veto !", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis enim dicta eum dolores sapiente nesciunt dolorem quaerat minus veniam ratione quam placeat in eligendi, vero dolorum voluptatem, deserunt vel libero?")
+
 
