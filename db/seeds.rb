@@ -41,10 +41,10 @@ Profile.create(role: "clinic", last_name: "Dispensaire SPA")
 Profile.create(role: "clinic", last_name: "Clin. Samatha")
 
 #Seed Gardes
-Duty.create(id: 1, title: "15 Aout (du 14 du 16 aout 2017)", clinic: Profile.where(role: "clinic").sample, date_start: "14/08/17", date_end: "16/08/17")
-Duty.create(id: 2, title: "Nuit du 01 au 02 Juin 2016", clinic: Profile.where(role: "clinic").sample, date_start: "01/02/16", date_end: "02/06/16")
-Duty.create(id: 3, title: "Nuit du 03 au 04 Aout 2017", clinic: Profile.where(role: "clinic").sample, date_start: "03/08/17", date_end: "04/08/17")
-Duty.create(id: 49, title: "We du 12 au 13 Mai 2018", clinic: Profile.where(role: "clinic").sample, date_start: "12/05/18", date_end: "13/05/18")
+Duty.create(title: "15 Aout (du 14 du 16 aout 2017)", clinic: Profile.where(role: "clinic").sample, date_start: "14/08/17", date_end: "16/08/17")
+Duty.create(title: "Nuit du 01 au 02 Juin 2016", clinic: Profile.where(role: "clinic").sample, date_start: "01/02/16", date_end: "02/06/16")
+Duty.create(title: "Nuit du 03 au 04 Aout 2017", clinic: Profile.where(role: "clinic").sample, date_start: "03/08/17", date_end: "04/08/17")
+Duty.create(title: "We du 12 au 13 Mai 2018", clinic: Profile.where(role: "clinic").sample, date_start: "12/05/18", date_end: "13/05/18")
 
 
 #Seed Faker

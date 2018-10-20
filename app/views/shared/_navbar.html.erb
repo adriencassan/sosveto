@@ -5,6 +5,7 @@
       <div class="avatar">
         <% if !current_user.profile.avatar.nil? %>
           <%= cl_image_tag current_user.profile.avatar, class: "avatar"%>
+           <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
         <% elsif current_user.profile.role === "admin" %>
           <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
         <% elsif  current_user.profile.role === "veterinaire" %>

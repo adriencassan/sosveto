@@ -12,7 +12,7 @@
       <div class="content-header">
         <div class="grid">
           <div class="row">
-            <div class="col-xs-4"><h4><%= @garde.titre %></h4></div>
+            <div class="col-xs-4"><h4><%= @duty.title %></h4></div>
             <div class="col-xs-4"></div>
             <div class="col-xs-4"></div>
           </div>
@@ -44,7 +44,6 @@
                   <p><%= consultation.client_ville %></p>
                 </div>
                 <div class="col-xs-2">
-                  <p><%= consultation.client_clinique.nom %></p>
                 </div>
                 <div class="col-xs-2">
                   <h5><%= consultation.animal_nom %></h5>
@@ -54,7 +53,7 @@
                   <h5><%= consultation.statut_envoi %></h5>
                 </div>
                 <div class="col-xs-2">
-                  <%= link_to "Ouvrir", garde_consultation_path(@garde, consultation), class:"btn btn-theme-dark btn-round"%>
+                  <%= link_to "Ouvrir", duty_consultation_path(@duty, consultation), class:"btn btn-theme-dark btn-round"%>
                 </div>
               </div>
             <% end %>

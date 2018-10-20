@@ -1,31 +1,31 @@
 class ConsultationsController < ApplicationController
 
   def index
-    policy_scope(Consultation).where(garde: params[:id])
+    policy_scope(Consultation).where(duty: params[:id])
   end
 
   def show
-    @garde = Garde.find(params[:garde_id])
+    @duty = Duty.find(params[:duty_id])
     @consultation = Consultation.find(params[:id])
     authorize @consultation
   end
 
   def new
-    @garde = Garde.find(params[:garde_id])
+    @duty = Duty.find(params[:duty_id])
     @consultation = Consultation.new
   end
 
   def edit
-    @garde = Garde.find(params[:garde_id])
+    @duty = Duty.find(params[:duty_id])
     @consultation = Consultation.find(params[:id])
   end
 
   def create
-    @garde = Garde.find(params[:garde_id])
+    @duty = Duty.find(params[:duty_id])
     @consultation = Consultation.new(consultation_params)
-    @consultation.garde = @garde
+    @consultation.duty = @duty
     if @consultation.save!
-      redirect_to garde_path(@garde)
+      redirect_to duty_path(@duty)
     else
       render 'form', @consultation
     end
@@ -34,7 +34,7 @@ class ConsultationsController < ApplicationController
   def update
     @consultation = Consultation.find(params[:id])
     if @consultation.update(consultation_params)
-      redirect_to garde_path(@consultation.garde)
+      redirect_to duty_path(@consultation.duty)
     else
       render 'form', @consultation
     end

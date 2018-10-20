@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   belongs_to :clinic, class_name: 'Profile', optional: true
   has_many :profiles, foreign_key: 'clinic_id'
