@@ -13,22 +13,22 @@
 
       <div class="content-container">
       <div class="card">
-        <h4>Listes des gardes</h4>
+        <h4>Listes des duties</h4>
         <div class="grid">
           <div class="row grid-row-header">
             <div class="col-xs-4">Client</div>
-            <div class="col-xs-4">Vétérinaire de Garde</div>
+            <div class="col-xs-4">Vétérinaire de duty</div>
             <div class="col-xs-4"></div>
           </div>
-          <% @gardes.each do |garde| %>
+          <% @duties.each do |duty| %>
             <div class="row grid-row">
-              <div class="col-xs-4"><h5><%= garde.titre %></h5></div>
+              <div class="col-xs-4"><h5><%= duty.titre %></h5></div>
               <div class="col-xs-4">
                 <div class="" style="font-size: 12px"><img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar sm avatar-margin-right">Pierre-Alexis Cassan</div>
               </div>
               <div class="col-xs-4">
                 <div class="grid-btns">
-                  <%= link_to garde_path(garde), class:"btn btn-icon" do%><i class="fas fa-plus-circle"></i><%end%>
+                  <%= link_to duty_path(duty), class:"btn btn-icon" do%><i class="fas fa-plus-circle"></i><%end%>
                 </div>
               </div>
             </div>
