@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    gardes_path
+    duties_path
   end
 
   def skip_pundit?
