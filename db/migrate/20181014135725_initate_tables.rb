@@ -20,6 +20,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :adr_zip
       t.string :adr_ville
       t.string :adr_pays
+      t.string :adr_map
       t.string :telephone
       t.string :email
       t.string :role

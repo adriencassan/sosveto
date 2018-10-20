@@ -1,25 +1,43 @@
 .container-form {
-  //background-color: white;
-  width: 900;
   margin-bottom: 50px;
   border-width: 3px;
   font-size: 12px;
-}
 
- .container-form  h2 {
+  h2 {
     font-size: 18px;
     font-weight: bold;
   }
+}
+
+
+.form-label {
+  padding: 0px;
+  height: 100%;
+  align-item: center;
+}
+
 
 .form-control {
   height: 40px;
   border-radius: 20px;
+  font-size: 12px;
+}
+
+.form-control-xs {
+  height: 30px;
+  border-radius: 10px;
+}
+
+.form-label-xs {
+  padding: 5px 0 0 0;
 }
 
 .from-control-lg {
   height: 60px;
   border-radius: 30px;
 }
+
+//Boutton form
 
 .btn-form-sm {
   width: 60px;
@@ -36,10 +54,6 @@
   font-size: 12px;
 }
 
-.form-control {
-   font-size: 12px;
-}
-
 
 .form-row {
   margin-bottom: 5px;
@@ -51,7 +65,6 @@
 
 .form-tab-content {
   padding: 10px;
-  //border: 1px solid #ddd;
   border-top-color: transparent;
   min-height: 300px;
 
