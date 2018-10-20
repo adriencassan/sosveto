@@ -18,16 +18,16 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.string :adr_street
       t.string :adr_zip
-      t.string :adr_ville
-      t.string :adr_pays
+      t.string :adr_city
+      t.string :adr_country
       t.string :adr_map
-      t.string :telephone
+      t.string :phone
       t.string :email
       t.string :role
       t.string :avatar
       t.boolean :admin
       t.references :user, index: true, foreign_key: true
-      t.references :clinique, index: true, foreign_key: true
+      t.references :clinic, index: true, foreign_key: true
       t.timestamps
     end
 

@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.string "last_name"
     t.string "adr_street"
     t.string "adr_zip"
-    t.string "adr_ville"
+    t.string "adr_city"
     t.string "adr_pays"
     t.string "telephone"
     t.string "email"
