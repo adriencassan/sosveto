@@ -1,0 +1,24 @@
+<div class="grid">
+  <div class="row">
+    <div class="container-form">
+      <%= simple_form_for @profile do |f| %>
+        <%= f.error_notification %>
+        <div class="form-row">
+          <%= f.label "Role", class: "col-xs-2 form-label-xs" %>
+          <%= f.input :role, label: false, collection: ["admin","veterinaire","client","animal"], wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+        </div>
+        <div class="form-row">
+          <%= f.label "Clinique", class: "col-xs-2 form-label-xs" %>
+          <%= f.association :clinic, collection: Profile.all, label: false, label_method: :full_name, selected: @profile.clinic, wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+        </div>
+         <div class="form-row">
+          <%= f.label "Admin", class: "col-xs-2 form-label-xs" %>
+          <%= f.input :admin, as: :boolean, label: false,  wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+        </div>
+        <div class="form-row">
+          <%= f.submit "Enregistrer", class: "btn btn-round btn-md btn-theme-dark" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

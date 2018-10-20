@@ -3,7 +3,7 @@ ruby '2.4.4'
 
 
 gem 'devise'
-gem 'figaro'
+#gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
@@ -17,6 +17,10 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem "pundit"
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+gem 'country_select'
 
 #Gem test
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
@@ -33,3 +37,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'dotenv-rails', groups: [:development, :test]

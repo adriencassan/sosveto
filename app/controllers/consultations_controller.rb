@@ -1,12 +1,13 @@
 class ConsultationsController < ApplicationController
 
   def index
-    Consultation.where(garde: params[:id])
+    policy_scope(Consultation).where(garde: params[:id])
   end
 
   def show
     @garde = Garde.find(params[:garde_id])
     @consultation = Consultation.find(params[:id])
+    authorize @consultation
   end
 
   def new
