@@ -16,7 +16,8 @@ class InitateTables < ActiveRecord::Migration[5.1]
     create_table :profiles do |t|
       t.string :first_name
       t.string :last_name
-      t.string :adr_street
+      t.string :adr_line1
+      t.string :adr_line2
       t.string :adr_zip
       t.string :adr_city
       t.string :adr_country
@@ -27,7 +28,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :avatar
       t.boolean :admin
       t.references :user, index: true, foreign_key: true
-      t.references :clinic, index: true, foreign_key: true
+      t.references :clinic, index: true, foreign_key: {to_table: :profiles}
       t.timestamps
     end
 

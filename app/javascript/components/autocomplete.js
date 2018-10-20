@@ -19,7 +19,6 @@ function parseResultsByType(results,type) {
 function onPlaceChanged() {
   let place = this.getPlace();
   let results = place.address_components;
-  console.log(results)
   document.getElementById('route').value = (parseResultsByType(results,'street_number') + ' ' || '')  + parseResultsByType(results,'route');
   document.getElementById('locality').value = parseResultsByType(results,'locality') || '';
   document.getElementById('postal_code').value = parseResultsByType(results,'postal_code') || '';

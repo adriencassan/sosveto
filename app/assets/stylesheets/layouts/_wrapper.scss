@@ -63,9 +63,10 @@
 
 .content-page-wrapper .right-content-wrapper {
   //width: calc(100vw - 300px);
-  //height: 100%;
-  flex: 1 0 auto;
-  height: calc(100vh - 170px);
+  height: 100%;
+  flex: 0 0 60%;
+  //width: 100px;
+  //height: calc(100vh - 170px);
   //overflow: scroll;
   padding: 10px;
 }

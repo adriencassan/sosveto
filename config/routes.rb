@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index]
 
-  resources :profile, only: [:show]
+  resources :profile, only: [:show, :update]
 end

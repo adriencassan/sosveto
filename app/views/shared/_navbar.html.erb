@@ -2,8 +2,16 @@
   <!-- Right Navigation -->
   <div class="navbar-user">
     <% if user_signed_in? %>
-      <div class="">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar">
+      <div class="avatar">
+        <% if !current_user.profile.avatar.nil? %>
+          <%= cl_image_tag @profile.avatar, class: "avatar"%>
+        <% elsif current_user.profile.role === "admin" %>
+          <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
+        <% elsif  current_user.profile.role === "veterinaire" %>
+          <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
+        <% else %>
+          <%= image_tag "dog.png", height: 40, padding: 10  %>
+        <% end %>
       </div>
       <div class="text">
         <div style="font-weight: bold">Adrien Cassan</div>

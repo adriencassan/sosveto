@@ -1,7 +1,10 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
-  mount_uploader :adr_map, AttachmentUploader
+  belongs_to :clinic, class_name: "Profile"
+  has_many :profile, class_name: "Profile", foreign_key: 'clinic_id'
+
+  #mount_uploader :adr_map, AttachmentUploader
   mount_uploader :avatar, AttachmentUploader
 
   def full_name

@@ -20,7 +20,7 @@ gem 'webpacker'
 gem "pundit"
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-
+gem 'country_select'
 
 #Gem test
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'

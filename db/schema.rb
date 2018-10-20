@@ -70,20 +70,22 @@ ActiveRecord::Schema.define(version: 20181014135725) do
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "adr_street"
+    t.string "adr_line1"
+    t.string "adr_line2"
     t.string "adr_zip"
     t.string "adr_city"
-    t.string "adr_pays"
-    t.string "telephone"
+    t.string "adr_country"
+    t.string "adr_map"
+    t.string "phone"
     t.string "email"
     t.string "role"
     t.string "avatar"
     t.boolean "admin"
     t.bigint "user_id"
-    t.bigint "clinique_id"
+    t.bigint "clinic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clinique_id"], name: "index_profiles_on_clinique_id"
+    t.index ["clinic_id"], name: "index_profiles_on_clinic_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -107,6 +109,6 @@ ActiveRecord::Schema.define(version: 20181014135725) do
   add_foreign_key "consultations", "cliniques", column: "client_clinique_id"
   add_foreign_key "consultations", "gardes"
   add_foreign_key "gardes", "cliniques"
-  add_foreign_key "profiles", "cliniques"
+  add_foreign_key "profiles", "profiles", column: "clinic_id"
   add_foreign_key "profiles", "users"
 end
