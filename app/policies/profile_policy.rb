@@ -1,11 +1,11 @@
-class GardePolicy < ApplicationPolicy
+class ProfilePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def show?
+  def show
     true
   end
 end

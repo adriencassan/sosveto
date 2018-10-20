@@ -10,15 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181013143130) do
+ActiveRecord::Schema.define(version: 20181014135725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cliniques", force: :cascade do |t|
     t.string "nom"
+    t.string "adr_street"
+    t.string "adr_zip"
+    t.string "adr_ville"
+    t.string "adr_pays"
+    t.string "telephone"
+    t.string "email"
+    t.string "avatar"
     t.string "veterinaires"
-    t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,8 +61,30 @@ ActiveRecord::Schema.define(version: 20181013143130) do
 
   create_table "gardes", force: :cascade do |t|
     t.string "titre"
+    t.bigint "clinique_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["clinique_id"], name: "index_gardes_on_clinique_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "adr_street"
+    t.string "adr_zip"
+    t.string "adr_ville"
+    t.string "adr_pays"
+    t.string "telephone"
+    t.string "email"
+    t.string "role"
+    t.string "avatar"
+    t.boolean "admin"
+    t.bigint "user_id"
+    t.bigint "clinique_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinique_id"], name: "index_profiles_on_clinique_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,4 +106,7 @@ ActiveRecord::Schema.define(version: 20181013143130) do
 
   add_foreign_key "consultations", "cliniques", column: "client_clinique_id"
   add_foreign_key "consultations", "gardes"
+  add_foreign_key "gardes", "cliniques"
+  add_foreign_key "profiles", "cliniques"
+  add_foreign_key "profiles", "users"
 end

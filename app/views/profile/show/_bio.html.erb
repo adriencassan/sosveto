@@ -1,0 +1,29 @@
+<div class="card-bio">
+  <div class="header">
+    <h4><%= @profile.full_name %></h4>
+    <h5><%= @profile.user.email %></h4>
+  </div>
+
+  <div class="avatar">
+    <% if @profile.role === "admin" %>
+      <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
+    <% elsif  @profile.role === "veterinaire" %>
+     <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
+    <% else %>
+      <%= image_tag "dog.png", height: 40, padding: 10  %>
+    <% end %>
+  </div>
+
+          <div class="up-content">
+
+          <div class="up-content-row">
+            <div class="up-content-avatar">
+
+            </div>
+          </div>
+        </div>
+        <div class="down-content">
+            <%# render "consultations/menu" %>
+        </div>
+      </div>
+</div>

@@ -1,6 +1,7 @@
 .card {
-  margin: 10px;
+  //margin: 10px;
   padding: 14px;
+  background: $theme-foreground;
   border: 2px solid $theme-background;
   border-radius: 10px;
 
@@ -32,3 +33,52 @@
 }
 
 
+// CARD BIO
+.card-bio {
+  //margin: 10px;
+  padding: 10px;
+  height: 100%;
+  border-radius: 10px;
+  background: white;
+
+  position: relative;
+}
+
+.card-bio .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  border-radius: 10px 10px 0 0 ;
+  padding-top: 40px;
+  width: 100%;
+
+  background-color: $theme-dark;
+  color: white;
+  text-align: center;
+
+  h4 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  h5 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.card-bio .avatar {
+  position: absolute;
+  top: 110px;
+  right: 70px;
+
+  img {
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+  }
+}

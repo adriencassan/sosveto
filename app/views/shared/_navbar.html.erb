@@ -1,6 +1,4 @@
 <div class="navbar">
-
-
   <!-- Right Navigation -->
   <div class="navbar-user">
     <% if user_signed_in? %>
@@ -21,7 +19,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <% if user_signed_in? %>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to profile_path(current_user.profile) do %>
                   <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profile") %>
             <% end %>
           </li>
