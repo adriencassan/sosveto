@@ -16,40 +16,45 @@ profile2 = Profile.create(user: user2, role: "veterinaire", first_name: "Veterin
 profile3 = Profile.create(user: user3, role: "veterinaire", first_name: "Veterinaire 2", last_name: "Veterinaire 2")
 
 # Seed Clinique
-Clinique.create(nom: "NC", veterinaires: "", email: "")
-Clinique.create(nom: "Drs Alasnier", veterinaires: "", email: "v.alasnier@wanadoo.fr")
-Clinique.create(nom: "Dr Blain", veterinaires: "", email: "dany.blain@sfr.fr")
-Clinique.create(nom: "Drs Bosquet-Picot", veterinaires: "", email: "picot_francoise@orange.fr")
-Clinique.create(nom: "Clin. de Lamballe", veterinaires: "Bouty; Auguin", email: "cliniquedelamballe@orange.fr")
-Clinique.create(nom: "Clin. St Jean", veterinaires: "Blanc; Cassan", email: "clivetsaintjean@orange.fr")
-Clinique.create(nom: "Dr. Debricon", veterinaires: "", email: "sophie.debricon@orange.fr ")
-Clinique.create(nom: "Clin. de la tangentielle", veterinaires: "Gaspar ", email: "clinique-tangentielle@veterinaire.fr")
-Clinique.create(nom: "Clin. de la Cigogne", veterinaires: "Guillet; Bouriez", email: "veto.bouriez@orange.fr")
-Clinique.create(nom: "Dr. Huck", veterinaires: "", email: "huck-kouvtanovitch@orange.fr")
-Clinique.create(nom: "Dr Laverrière", veterinaires: "", email: "clin.vet.garenne@gemail.com")
-Clinique.create(nom: "Clin. De la tuilerie", veterinaires: "Marçais; Mangold", email: "mangold.marcais@wanadoo.fr")
-Clinique.create(nom: "Clin. des Glycines", veterinaires: "Mathet; Laizeau; Combet; Boissay ", email: "asv@cliniqueveterinaire_lesglycines.com")
-Clinique.create(nom: "Clin. de Beauvoir", veterinaires: "Molvot; Laurent", email: "clinvetbeauvoir@yahoo.fr")
-Clinique.create(nom: "Clin. des Acacias", veterinaires: "Poisson; Paillassou; Bouvier;Arinal", email: "contact@vetacacias.com")
-Clinique.create(nom: "Clin. de la Guignadière", veterinaires: "Spilliaert; Cassan", email: "serge.spilliaert@wanadoo.fr ")
-Clinique.create(nom: "Clin. d'Artois", veterinaires: "Valat; Petit", email: "clivetartois@orange.fr")
-Clinique.create(nom: "Clin. Ligéria", veterinaires: "Vidal; Menez; Goin", email: "cliniqueligeria@gemail.com")
-Clinique.create(nom: "Clin. des Coutures", veterinaires: "Lalange; LeChien", email: "cliniquecoutures@wanadoo.fr")
-Clinique.create(nom: "Clin. des Portes de Tavers", veterinaires: "Gerbet", email: "vetobeaugency@orange.fr")
-Clinique.create(nom: "Hors SOS Véto", veterinaires: "", email: "")
-Clinique.create(nom: "Dispensaire SPA", veterinaires: "", email: "orleans@spa.asso.fr")
-Clinique.create(nom: "Clin. Samatha", veterinaires: "Charrière", email: "cabinet.veterinaire.samatha@gmail.com")
+Profile.create(role: "clinic", last_name: "NC")
+Profile.create(role: "clinic", last_name: "Drs Alasnier")
+Profile.create(role: "clinic", last_name: "Dr Blain")
+Profile.create(role: "clinic", last_name: "Drs Bosquet-Picot")
+Profile.create(role: "clinic", last_name: "Clin. de Lamballe")
+Profile.create(role: "clinic", last_name: "Clin. St Jean")
+Profile.create(role: "clinic", last_name: "Dr. Debricon")
+Profile.create(role: "clinic", last_name: "Clin. de la tangentielle")
+Profile.create(role: "clinic", last_name: "Clin. de la Cigogne")
+Profile.create(role: "clinic", last_name: "Dr. Huck")
+Profile.create(role: "clinic", last_name: "Dr Laverrière")
+Profile.create(role: "clinic", last_name: "Clin. De la tuilerie")
+Profile.create(role: "clinic", last_name: "Clin. des Glycines")
+Profile.create(role: "clinic", last_name: "Clin. de Beauvoir")
+Profile.create(role: "clinic", last_name: "Clin. des Acacias")
+Profile.create(role: "clinic", last_name: "Clin. de la Guignadière")
+Profile.create(role: "clinic", last_name: "Clin. d'Artois")
+Profile.create(role: "clinic", last_name: "Clin. Ligéria")
+Profile.create(role: "clinic", last_name: "Clin. des Coutures")
+Profile.create(role: "clinic", last_name: "Clin. des Portes de Tavers")
+Profile.create(role: "clinic", last_name: "Hors SOS Véto")
+Profile.create(role: "clinic", last_name: "Dispensaire SPA")
+Profile.create(role: "clinic", last_name: "Clin. Samatha")
 
 #Seed Gardes
-Garde.create(id: 1, titre: "15 Aout (du 14 du 16 aout 2017)")
-Garde.create(id: 2, titre: "Nuit du 01 au 02 Juin 2016")
-Garde.create(id: 3, titre: "Nuit du 03 au 04 Aout 2017")
-Garde.create(id: 49, titre: "We du 12 au 13 Mai 2018")
+Duty.create(id: 1, title: "15 Aout (du 14 du 16 aout 2017)", clinic: Profile.where(role: "clinic").sample, date_start: "14/08/17", date_end: "16/08/17")
+Duty.create(id: 2, title: "Nuit du 01 au 02 Juin 2016", clinic: Profile.where(role: "clinic").sample, date_start: "01/02/16", date_end: "02/06/16")
+Duty.create(id: 3, title: "Nuit du 03 au 04 Aout 2017", clinic: Profile.where(role: "clinic").sample, date_start: "03/08/17", date_end: "04/08/17")
+Duty.create(id: 49, title: "We du 12 au 13 Mai 2018", clinic: Profile.where(role: "clinic").sample, date_start: "12/05/18", date_end: "13/05/18")
 
 
 #Seed Faker
 20.times do
-  Consultation.create(client_clinique_id: Clinique.all.pluck(:id).sample, garde: Garde.all.sample ,client_nom:Faker::Name.name ,client_adresse:Faker::Address.full_address, client_ville:  Faker::Address.city, client_telephone:  Faker::PhoneNumber.phone_number, client_mail:Faker::Internet.email,animal_nom:Faker::Dog.name,animal_espece:"Chien",animal_ageA:(1..10).to_a.sample,animal_ageM:0,animal_sexe:["Male","Female"].sample,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph)
+ ### TODO Profile.create(role: client...)
+end
+
+
+20.times do
+  Consultation.create(duty: Duty.all.sample ,client_nom:Faker::Name.name ,client_adresse:Faker::Address.full_address, client_ville:  Faker::Address.city, client_telephone:  Faker::PhoneNumber.phone_number, client_mail:Faker::Internet.email,animal_nom:Faker::Dog.name,animal_espece:"Chien",animal_ageA:(1..10).to_a.sample,animal_ageM:0,animal_sexe:["Male","Female"].sample,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph)
 end
 
 

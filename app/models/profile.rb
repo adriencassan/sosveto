@@ -4,6 +4,9 @@ class Profile < ApplicationRecord
   belongs_to :clinic, class_name: "Profile"
   has_many :profile, class_name: "Profile", foreign_key: 'clinic_id'
 
+  has_many :duties, foreign_key: 'clinic_id'
+  has_many :consultations, foreign_key: 'clinic_id'
+
   #mount_uploader :adr_map, AttachmentUploader
   mount_uploader :avatar, AttachmentUploader
 

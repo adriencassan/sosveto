@@ -1,6 +1,6 @@
 class Consultation < ApplicationRecord
   belongs_to :clinique, foreign_key: "client_clinique_id"
-  belongs_to :garde
+  belongs_to :duty
 
 
   def client_clinique

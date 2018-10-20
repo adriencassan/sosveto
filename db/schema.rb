@@ -15,28 +15,13 @@ ActiveRecord::Schema.define(version: 20181014135725) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cliniques", force: :cascade do |t|
-    t.string "nom"
-    t.string "adr_street"
-    t.string "adr_zip"
-    t.string "adr_ville"
-    t.string "adr_pays"
-    t.string "telephone"
-    t.string "email"
-    t.string "avatar"
-    t.string "veterinaires"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "consultations", force: :cascade do |t|
-    t.bigint "garde_id"
+    t.bigint "duty_id"
     t.string "client_nom"
     t.string "client_adresse"
     t.string "client_ville"
     t.string "client_telephone"
     t.string "client_mail"
-    t.bigint "client_clinique_id"
     t.string "animal_nom"
     t.string "animal_espece"
     t.integer "animal_ageA"
@@ -48,8 +33,17 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.string "statut_envoi", default: "Non-envoyée"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_clinique_id"], name: "index_consultations_on_client_clinique_id"
-    t.index ["garde_id"], name: "index_consultations_on_garde_id"
+    t.index ["duty_id"], name: "index_consultations_on_duty_id"
+  end
+
+  create_table "duties", force: :cascade do |t|
+    t.date "date_start"
+    t.date "date_end"
+    t.string "title"
+    t.bigint "clinic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_duties_on_clinic_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -57,14 +51,6 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "gardes", force: :cascade do |t|
-    t.string "titre"
-    t.bigint "clinique_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinique_id"], name: "index_gardes_on_clinique_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -106,9 +92,8 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "consultations", "cliniques", column: "client_clinique_id"
-  add_foreign_key "consultations", "gardes"
-  add_foreign_key "gardes", "cliniques"
+  add_foreign_key "consultations", "duties"
+  add_foreign_key "duties", "profiles", column: "clinic_id"
   add_foreign_key "profiles", "profiles", column: "clinic_id"
   add_foreign_key "profiles", "users"
 end
