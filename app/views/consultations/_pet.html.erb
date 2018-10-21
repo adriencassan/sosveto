@@ -1,0 +1,35 @@
+<div class="card-bio">
+  <div class="header">
+
+    <div class="title">
+      <h4><%= pet.full_name %></h4>
+      <h5><%= pet.user.email %></h5>
+    </div>
+
+    <div class="avatar">
+      <% if !pet.avatar.url.nil? %>
+        <%= cl_image_tag @profile.avatar, height: 40%>
+      <% elsif pet.role === "admin" %>
+        <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
+      <% elsif  pet.role === "veterinaire" %>
+       <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>
+      <% else %>
+        <%= image_tag "dog.png", height: 40, padding: 10  %>
+      <% end %>
+    </div>
+
+    <div class="role">
+      <%= pet.role.upcase %>
+    </div>
+  </div>
+
+
+
+  <div class="content">
+    <h6>Adresse</h6>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis excepturi magni reprehenderit quas debitis voluptates magnam, asperiores id ad officiis maiores voluptatem modi, eos et, aperiam omnis doloribus ipsa! Tempora!</p>
+  </div>
+</div>
+
+
+

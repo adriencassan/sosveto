@@ -48,13 +48,19 @@ Duty.create(title: "We du 12 au 13 Mai 2018", clinic: Profile.where(role: "clini
 
 
 #Seed Faker
-20.times do
- ### TODO Profile.create(role: client...)
+
+# Create Pets
+6.times do
+ Profile.create(role: "animal", last_name: Faker::Dog.name, pet_specie: ["Chien","Chat","Lapin"], pet_age: (1..10).to_a.sample, pet_gender:["Male","Femelle"].sample, pet_clinique: Profile.where(role: "clinique").sample )
+end
+
+6.times do
+ Profile.create(role: "client", last_name: Faker::Name.name, adr_route: Faker::Address.full_address, adr_city: Faker::Address.city, client_gender:["Male","Femelle"].sample, email:Faker::Internet.email )
 end
 
 
 20.times do
-  Consultation.create(duty: Duty.all.sample ,client_nom:Faker::Name.name ,client_adresse:Faker::Address.full_address, client_ville:  Faker::Address.city, client_telephone:  Faker::PhoneNumber.phone_number, client_mail:Faker::Internet.email,animal_nom:Faker::Dog.name,animal_espece:"Chien",animal_ageA:(1..10).to_a.sample,animal_ageM:0,animal_sexe:["Male","Female"].sample,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph)
+  Consultation.create(duty: Duty.all.sample , pet: Profile.where(role: "animal").sample, client: Profile.where(role: "client").sample  ,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph)
 end
 
 
