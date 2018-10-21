@@ -26,6 +26,10 @@ gem 'country_select'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 
+#Gem PDF
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
