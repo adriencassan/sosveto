@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.string "consultation_motif"
     t.string "consultation_commentaires"
     t.string "consultation_suites"
+    t.string "report"
     t.string "statut_envoi", default: "Non-envoyée"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

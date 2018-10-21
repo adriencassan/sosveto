@@ -55,12 +55,13 @@ class ConsultationsController < ApplicationController
     #  render pdf: "test_name", template: "consultations/pdf/show.html.erb", layout: 'pdf.html.erb', page_size: "A4"
 
     pdf = render_to_string pdf: "some_file_name", template: "consultations/pdf/show.html.erb", layout: 'pdf.html.erb', page_size: "A4", encoding: "UTF-8"
-
+    @consultation.report = pdf
+    @consultation.save!
     # then save to a file
-    save_path = Rails.root.join('pdfs','filename.pdf')
-    File.open(save_path, 'wb') do |file|
-      file << pdf
-    end
+    #save_path = Rails.root.join('pdfs','filename.pdf')
+    #File.open(save_path, 'wb') do |file|
+    #  file << pdf
+    #end
   end
 
 
