@@ -24,7 +24,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :pet_specie
       t.string :pet_gender
       t.integer :pet_age
-      t.references :pet_clinic, index: true, foreign_key: {to_table: :profiles}
+      t.references :pet_owner, index: true, foreign_key: {to_table: :profiles}
 
       t.timestamps
     end
@@ -40,11 +40,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
     create_table :consultations do |t|
       t.references :duty, foreign_key: true
       t.references :pet, index: true, foreign_key: {to_table: :profiles}
-      t.string :client_nom
-      t.string :client_adresse
-      t.string :client_ville
-      t.string :client_telephone
-      t.string :client_mail
+      t.references :client, index: true, foreign_key: {to_table: :profiles}
       t.string :consultation_motif
       t.string :consultation_commentaires
       t.string :consultation_suites

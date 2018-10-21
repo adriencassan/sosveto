@@ -1,5 +1,7 @@
 class Consultation < ApplicationRecord
   belongs_to :duty
+  belongs_to :client, class_name: "Profile"
+  belongs_to :pet, class_name: "Profile"
 
    mount_uploader :report, AttachmentUploader
   #def client_clinique

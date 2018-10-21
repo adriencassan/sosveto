@@ -49,13 +49,16 @@ Duty.create(title: "We du 12 au 13 Mai 2018", clinic: Profile.where(role: "clini
 
 #Seed Faker
 
-# Create Pets
-6.times do
- Profile.create(role: "animal", last_name: Faker::Dog.name, pet_specie: ["Chien","Chat","Lapin"], pet_age: (1..10).to_a.sample, pet_gender:["Male","Femelle"].sample, pet_clinique: Profile.where(role: "clinique").sample )
+
+
+# Create Clients
+5.times do
+ Profile.create(role: "client", last_name: Faker::Name.name, adr_line1: Faker::Address.full_address, adr_city: Faker::Address.city, client_gender:["Male","Femelle"].sample, email:Faker::Internet.email )
 end
 
+# Create Pets
 6.times do
- Profile.create(role: "client", last_name: Faker::Name.name, adr_route: Faker::Address.full_address, adr_city: Faker::Address.city, client_gender:["Male","Femelle"].sample, email:Faker::Internet.email )
+ Profile.create(role: "animal", last_name: Faker::Dog.name, pet_specie: ["Chien","Chat","Lapin"], pet_age: (1..10).to_a.sample, pet_gender:["Male","Femelle"].sample, clinic: Profile.where(role: "clinique").sample, pet_owner: Profile.where(role: "client").sample  )
 end
 
 
