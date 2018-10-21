@@ -59,17 +59,24 @@
   //box-shadow: 2px 2px 2px 1px grey;
 }
 
-.grid-row h5{
-  font-size: 12px;
+.grid-row p{
+  font-size: 10px;
   margin: 0px;
 }
 
-.grid-row p{
-  font-size: 12px;
-  margin: 0px;
-  font-weight: lighter;
-  overflow: none;
+
+
+
+.grid-cell-avatar {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+    margin-left: 10px;
+  }
 }
+
 
 // Buttons
 .grid-btns

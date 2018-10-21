@@ -7,7 +7,7 @@
     </div>
 
     <div class="avatar">
-      <% if !@profile.avatar.nil? %>
+      <% if !@profile.avatar.url.nil? %>
         <%= cl_image_tag @profile.avatar, height: 40%>
       <% elsif @profile.role === "admin" %>
         <%= image_tag "avatar-doctor.png", height: 40, padding: 10  %>

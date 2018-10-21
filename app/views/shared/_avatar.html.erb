@@ -1,0 +1,11 @@
+  <% if !profile.avatar.url.nil? %>
+    <%= cl_image_tag current_user.profile.avatar, class: "avatar"%>
+  <% elsif profile.role === "admin" %>
+    <%= image_tag "avatar-doctor.png", crop: :scale %>
+  <% elsif  profile.role === "veterinaire" %>
+    <%= image_tag "avatar-doctor.png"  %>
+  <% elsif  profile.role === "clinique" %>
+    <%= image_tag "avatar-clinic.png"  %>
+  <% else %>
+      <%= image_tag "dog.png"  %>
+  <% end %>

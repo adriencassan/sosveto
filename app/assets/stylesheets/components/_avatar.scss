@@ -1,15 +1,25 @@
 .avatar {
   width: 30px;
   border-radius: 50%;
+
+  img {
+    width: 30px;
+    border-radius: 50%;
+  }
+}
+
+.avatar-sm  {
+  width: 20px;
+  border-radius: 50%;
+
+  img {
+    width: 20px;
+    border-radius: 50%;
+  }
 }
 
 .avatar-large {
   width: 50px;
-  border-radius: 50%;
-}
-
-.avatar-sm {
-  width: 15px;
   border-radius: 50%;
 }
 
