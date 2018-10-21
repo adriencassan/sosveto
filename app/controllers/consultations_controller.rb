@@ -40,6 +40,29 @@ class ConsultationsController < ApplicationController
     end
   end
 
+  def pdf
+    @consultation = Consultation.find(params[:consultation_id])
+    authorize @consultation
+    ##respond_to do |format|
+     ##format.html
+     #format.pdf do
+     #  render pdf: "test_name", template: "consultations/pdf/show.html.erb", layout: 'pdf.html.erb', page_size: "A4"
+     #end
+    #end
+    ##render "consultations/pdf/show"
+
+
+    #  render pdf: "test_name", template: "consultations/pdf/show.html.erb", layout: 'pdf.html.erb', page_size: "A4"
+
+    pdf = render_to_string pdf: "some_file_name", template: "consultations/pdf/show.html.erb", layout: 'pdf.html.erb', page_size: "A4", encoding: "UTF-8"
+
+    # then save to a file
+    save_path = Rails.root.join('pdfs','filename.pdf')
+    File.open(save_path, 'wb') do |file|
+      file << pdf
+    end
+  end
+
 
   protected
 

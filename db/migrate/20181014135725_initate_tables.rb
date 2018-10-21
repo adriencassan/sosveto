@@ -42,6 +42,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :consultation_motif
       t.string :consultation_commentaires
       t.string :consultation_suites
+      t.string :report
       t.string :statut_envoi, default: "Non-envoyée"
       t.timestamps
     end

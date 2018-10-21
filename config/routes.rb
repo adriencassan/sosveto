@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :duties do
-    resources :consultations
+    resources :consultations do
+      get "/pdf", to: "consultations#pdf", as: :pdf
+    end
   end
 
   resources :events, only: [:index]
