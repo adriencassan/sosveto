@@ -44,6 +44,7 @@
 // CONTENT-PAGE-WRAPPER
 .content-page-wrapper .content-header {
   height: 40px;
+
 }
 
 .content-page-wrapper .content-wrapper{
@@ -70,5 +71,15 @@
   //height: calc(100vh - 170px);
   //overflow: scroll;
   padding: 10px;
+}
+
+.content-page-wrapper .right-content-wrapper .header {
+  height: 40px;
+ margin-bottom: 10px;
+}
+
+
+.content-page-wrapper .right-content-wrapper .content{
+  height: calc(100vh - 160px);
 }
 

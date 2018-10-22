@@ -15,9 +15,14 @@
   border-radius: 20px;
   padding: 5px;
   margin-bottom: 10px;
-  font-size: 14px;
-  color: white;
+
   background: $theme-dark;
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
 
 }
 
@@ -36,6 +41,12 @@
     font-size: 10px;
   }
 }
+//
+
+.row {
+  margin-bottom: 5px;
+}
+
 
 // container to display rows
 .grid-rows {
@@ -57,14 +68,66 @@
   padding: 5px;
   margin-bottom: 10px;
   //box-shadow: 2px 2px 2px 1px grey;
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 10px;
+    margin: 0px;
+  }
 }
 
-.grid-row p{
-  font-size: 10px;
-  margin: 0px;
+.grid-row .white {
+  background: none;
 }
 
 
+
+.grid-cell-theme {
+  //width: 100%;
+   height: 40px;
+  background: $theme-dark;
+  border-radius: 20px;
+  display: flex;
+ justify-content: space-around;
+  align-items: center;
+
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    //text-align: center;
+    color: white;
+  }
+
+  .noflex {
+    display: block;
+    text-align: center;
+    //justify-content: space-around;
+  }
+
+}
+
+.grid-cell-theme-icons{
+  //margin-top: 5px;
+  font-size: 30px;
+  color: $theme-dark;
+  display: flex;
+  align-items: center;
+  //justify-content: flex-end;
+
+  p{
+    font-size: 16px;
+    width: 80px;
+    margin: 0 5px;
+    text-align: center;
+  }
+}
 
 
 .grid-cell-avatar {
@@ -73,6 +136,7 @@
 
   p {
     font-size: 12px;
+
     margin-left: 10px;
   }
 }

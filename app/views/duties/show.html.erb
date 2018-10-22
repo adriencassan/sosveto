@@ -1,67 +1,80 @@
-<div class="main-container">
+<div class="main-wrapper">
   <div class="top-wrapper">
     <%= render 'shared/topbar' %>
   </div>
 
-  <div class="page-container">
-    <div class="right-menus-container">
+  <div class="page-wrapper">
+    <div class="menus-page-wrapper">
       <%= render 'shared/menusbar' %>
     </div>
 
-    <div class="content-wrapper">
-      <div class="content-header">
-        <div class="grid">
-          <div class="row">
-            <div class="col-xs-4"><h4><%= @duty.title %></h4></div>
-            <div class="col-xs-4"></div>
-            <div class="col-xs-4"></div>
+    <div class="content-page-wrapper">
+
+      <div class="card-wrapper">
+        <div class="card-header">
+          <div class="grid">
+            <div class="row">
+              <div class="col-xs-10 grid-row-white">
+                <%= "Garde du #{@duty.date_start.strftime("%d/%m/%Y")}-#{@duty.date_end.strftime("%d/%m/%Y")}" %>
+              </div>
+              <div class="col-xs-2 text-right">
+                 <%= link_to "Retour", duties_path, class:"btn btn-sm btn-round btn-white"%>
+              </div>
+            </div>
           </div>
+
         </div>
-      </div>
 
-
-       <div class="content-container with-header">
         <div class="card">
-          <h4>Listes des consultations</h4>
           <div class="grid">
 
             <div class="row grid-row-header">
-              <div class="col-xs-2">Client</div>
-              <div class="col-xs-2">Ville</div>
-              <div class="col-xs-2">Clinique</div>
-              <div class="col-xs-2">Animal</div>
-              <div class="col-xs-2">Statut</div>
-              <div class="col-xs-2"></div>
+              <div class="col-xs-1"><h5>Date</div>
+              <div class="col-xs-2"><h5>Client</h5></div>
+              <div class="col-xs-2"><h5>Animal</h5></div>
+              <div class="col-xs-2"><h5>Clinique</h5></div>
+              <div class="col-xs-2"><h5>Statut</h5></div>
+              <div class="col-xs-3"></div>
             </div>
 
             <% @consultations.each do |consultation| %>
               <div class="row grid-row">
-                <div class="col-xs-2">
-                  <h5><%= consultation.client_nom %></h5>
-                  <p><%= consultation.client_mail %></p>
+                <div class="col-xs-1 grid-cell-theme">
+                  <h5><%= consultation.created_at.strftime("%d.%m %Hh%M") %></5>
                 </div>
                 <div class="col-xs-2">
-                  <p><%= consultation.client_ville %></p>
+                  <h5><%= consultation.client.full_name %></h5>
+                  <p><%= consultation.client.phone %></p>
+                  <p><%= consultation.client.adr_city %></p>
                 </div>
+
                 <div class="col-xs-2">
+                  <h5><%= consultation.pet.full_name %></h5>
+                  <p><%= consultation.pet.pet_specie %></p>
                 </div>
+
                 <div class="col-xs-2">
-                  <h5><%= consultation.animal_nom %></h5>
-                  <p><%= consultation.animal_espece %></p>
+                  <% if consultation.pet.clinic.nil? %>
+                      <p><%= "Renseigner l'information dans la fiche animal" %></p>
+                  <% else %>
+                    <h5><%= consultation.pet.clinic.full_name %></h5>
+                    <p><%= consultation.pet.clinic.adr_city %></p>
+                  <% end %>
                 </div>
+
                   <div class="col-xs-2">
                   <h5><%= consultation.statut_envoi %></h5>
                 </div>
-                <div class="col-xs-2">
-                  <%= link_to "Ouvrir", duty_consultation_path(@duty, consultation), class:"btn btn-theme-dark btn-round"%>
+                <div class="col-xs-3">
+                  <%= link_to "Ouvrir", duty_consultation_path(@duty, consultation), class:"btn btn-theme-dark btn-sm btn-round"%>
                 </div>
               </div>
             <% end %>
 
           </div>
         </div>
+
       </div>
     </div>
-
   </div>
 </div>

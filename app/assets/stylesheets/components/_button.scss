@@ -24,6 +24,8 @@
   border-radius: 20px;
 }
 
+
+
 .btn-md {
   width: 100px;
   height: 40px;
@@ -34,12 +36,23 @@
   }
 }
 
+.btn-sm {
+  width: 90px;
+  height: 25px;
+  border-radius: 20px;
+}
+
 .btn-gray {
   background-color: $dark-gray;
   color: white;
   font-weight: bold;
 }
 
+.btn-white{
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+}
 
 .btn-icon {
  //background-color: $dark-gray;

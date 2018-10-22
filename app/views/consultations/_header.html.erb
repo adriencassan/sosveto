@@ -1,0 +1,12 @@
+<div class="card-header">
+  <div class="grid">
+    <div class="row">
+      <div class="col-xs-10 grid-row-white">
+        <%= "Consultation du #{@consultation.created_at.strftime("%d/%m/%Y")} (Garde : #{@consultation.duty.clinic.full_name})"  %>
+      </div>
+      <div class="col-xs-2 text-right">
+        <%= link_to "Retour", duty_path(@duty), class:"btn btn-sm btn-round btn-white"%>
+      </div>
+    </div>
+  </div>
+</div>

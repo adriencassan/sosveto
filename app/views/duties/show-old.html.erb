@@ -1,0 +1,68 @@
+show-old.html.erb
+<div class="main-container">
+  <div class="top-wrapper">
+    <%= render 'shared/topbar' %>
+  </div>
+
+  <div class="page-container">
+    <div class="right-menus-container">
+      <%= render 'shared/menusbar' %>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-header">
+        <div class="grid">
+          <div class="row">
+            <div class="col-xs-4"><h4><%= @duty.title %></h4></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
+          </div>
+        </div>
+      </div>
+
+
+       <div class="content-container with-header">
+        <div class="card">
+          <h4>Listes des consultations</h4>
+          <div class="grid">
+
+            <div class="row grid-row-header">
+              <div class="col-xs-2">Client</div>
+              <div class="col-xs-2">Ville</div>
+              <div class="col-xs-2">Clinique</div>
+              <div class="col-xs-2">Animal</div>
+              <div class="col-xs-2">Statut</div>
+              <div class="col-xs-2"></div>
+            </div>
+
+            <% @consultations.each do |consultation| %>
+              <div class="row grid-row">
+                <div class="col-xs-2">
+                  <h5><%= consultation.client_nom %></h5>
+                  <p><%= consultation.client_mail %></p>
+                </div>
+                <div class="col-xs-2">
+                  <p><%= consultation.client_ville %></p>
+                </div>
+                <div class="col-xs-2">
+                </div>
+                <div class="col-xs-2">
+                  <h5><%= consultation.animal_nom %></h5>
+                  <p><%= consultation.animal_espece %></p>
+                </div>
+                  <div class="col-xs-2">
+                  <h5><%= consultation.statut_envoi %></h5>
+                </div>
+                <div class="col-xs-2">
+                  <%= link_to "Ouvrir", duty_consultation_path(@duty, consultation), class:"btn btn-theme-dark btn-round"%>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

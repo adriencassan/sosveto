@@ -1,14 +1,26 @@
 <div class="main-wrapper">
-  <div class="top-wrapper"><%= render 'shared/topbar' %></div>
+  <div class="top-wrapper">
+    <%= render 'shared/topbar' %>
+  </div>
 
   <div class="page-wrapper">
-    <div class="menus-page-wrapper"><%= render 'shared/menusbar' %></div>
-
-
+    <div class="menus-page-wrapper">
+      <%= render 'shared/menusbar' %>
+    </div>
 
     <div class="content-page-wrapper">
-      <div class="left-content-wrapper"><%= render "consultations/pet", pet: @consultation.pet %></div>
-      <div class="right-content-wrapper"><%= render "consultations/tabs/tabs" %></div>
+      <div class="left-content-wrapper">
+        <%= render "consultations/pet", pet: @consultation.pet %>
+      </div>
+
+      <div class="right-content-wrapper">
+        <div class="header">
+          <%= render "consultations/header" %>
+        </div>
+        <div class="content">
+          <%= render "consultations/tabs/tabs" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

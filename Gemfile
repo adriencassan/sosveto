@@ -25,6 +25,8 @@ gem 'country_select'
 #Gem test
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+#internationalisation
+gem 'rails-i18n'
 
 #Gem PDF
 gem 'wicked_pdf', '~> 1.1'

@@ -1,43 +1,59 @@
-<div class="main-container">
-  <div class="top-wrapper">
-    <%= render 'shared/topbar' %>
-  </div>
+<div class="main-wrapper">
+  <div class="top-wrapper"><%= render 'shared/topbar' %></div>
 
-  <div class="page-container">
+  <div class="page-wrapper">
+    <div class="menus-page-wrapper"><%= render 'shared/menusbar' %></div>
 
-    <div class="right-menus-container">
-      <%= render 'shared/menusbar' %>
-    </div>
+    <div class="content-page-wrapper">
+      <div class="content-wrapper">
 
-    <div class="content-wrapper">
-
-      <div class="content-container">
       <div class="card">
-        <h4>Listes des duties</h4>
-        <div class="grid">
-          <div class="row grid-row-header">
-            <div class="col-xs-4">Client</div>
-            <div class="col-xs-4">Vétérinaire de duty</div>
-            <div class="col-xs-4"></div>
-          </div>
-          <% @duties.each do |duty| %>
-            <div class="row grid-row">
-              <div class="col-xs-4"><h5><%= duty.title %></h5></div>
-              <div class="col-xs-4">
-                <div class="" style="font-size: 12px"><img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar sm avatar-margin-right">Pierre-Alexis Cassan</div>
-              </div>
-              <div class="col-xs-4">
-                <div class="grid-btns">
-                  <%= link_to duty_path(duty), class:"btn btn-icon" do%><i class="fas fa-plus-circle"></i><%end%>
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" tabindex="-1">Mois précédents</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#"><%= Date.today.strftime("%B %Y") %></a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Mois suivants</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+
+        <div class="card">
+          <h4>Listes des gardes</h4>
+          <div class="grid">
+            <div class="row grid-row-header">
+              <div class="col-xs-4">Client</div>
+              <div class="col-xs-4">Véterinaire de garde</div>
+              <div class="col-xs-4"></div>
+            </div>
+            <% @duties.each do |duty| %>
+              <div class="row grid-row">
+                <div class="col-xs-4">
+                  <p><%= "#{duty.date_start.strftime('%A %d.%m')} - #{duty.date_end.strftime('%A %d.%m')}" %></p>
+                </div>
+                <div class="col-xs-4">
+                  <div class="grid-cell-avatar">
+                  <div class="avatar-sm">
+                    <%= render 'shared/avatar', profile: duty.clinic %>
+                  </div>
+                    <p><%= duty.clinic.full_name %></p>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="grid-btns">
+                    <%= link_to duty_path(duty), class:"btn btn-icon" do%><i class="fas fa-plus-circle"></i><%end%>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-      </div>
-
     </div>
-
   </div>
 </div>

@@ -1,9 +1,15 @@
+.card-wrapper{
+  width: 100%;
+}
+
+
 .card {
   //margin: 10px;
   padding: 14px;
   background: $theme-foreground;
   border: 2px solid $theme-background;
   border-radius: 10px;
+  width: 100%;
 
   h4 {
     font-size: 16px;
@@ -16,6 +22,8 @@
   p {
      font-size: 14px;
   }
+
+
 }
 
 .card.card-sm {
@@ -27,16 +35,36 @@
   }
 }
 
-.card-header{
-   border-bottom: 1px solid $theme-dark;
-   margin-bottom: 5px;
+
+.card:hover{
+    background-color: $theme-light;
+    display: inline-block;
+    vertical-align: middle;
+
+    // transition effect
+    -webkit-transform:translate(0px,10px);
+    -moz-transform:translate(0px,10px);
+    -ms-transform:translate(0px,10px);
+    -o-transform:translate(0px,10px);
+    transform:translate(0px,10px);
+  }
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }
+
 
 
 // CARD BIO
 .card-bio {
-  //margin: 10px;
-  //padding: 10px;
   height: 100%;
   border-radius: 10px;
   background: white;
