@@ -1,11 +1,12 @@
-<div class="card-header">
+<div class="grid-row-header">
   <div class="grid">
     <div class="row">
-      <div class="col-xs-10 grid-row-white">
-        <%= "Consultation du #{@consultation.created_at.strftime("%d/%m/%Y")} (Garde : #{@consultation.duty.clinic.full_name})"  %>
+      <div class="col-xs-2 grid-cell-theme-icons text-right" style="justify-content: flex-end">
+        <i class="fas fa-angle-left text-right"></i>
+          <%= link_to "Retour", duty_path(@duty), style:"font-size: 16px; margin-left: 10px;" %>
       </div>
-      <div class="col-xs-2 text-right">
-        <%= link_to "Retour", duty_path(@duty), class:"btn btn-sm btn-round btn-white"%>
+      <div class="col-xs-10 grid-cell-header">
+        <%= "Consultation du #{@consultation.created_at.strftime("%d/%m/%Y")} (Garde : #{@consultation.duty.clinic.full_name})"  %>
       </div>
     </div>
   </div>

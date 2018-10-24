@@ -16,29 +16,29 @@ profile2 = Profile.create(user: user2, role: "veterinaire", first_name: "Veterin
 profile3 = Profile.create(user: user3, role: "veterinaire", first_name: "Veterinaire 2", last_name: "Veterinaire 2")
 
 # Seed Clinique
-Profile.create(role: "clinique", last_name: "NC", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Drs Alasnier", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Dr Blain", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Drs Bosquet-Picot", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. de Lamballe", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. St Jean", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Dr. Debricon", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. de la tangentielle", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. de la Cigogne", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Dr. Huck", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Dr Laverrière", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. De la tuilerie", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. des Glycines", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. de Beauvoir", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. des Acacias", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. de la Guignadière", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. d'Artois", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. Ligéria", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. des Coutures", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. des Portes de Tavers", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Hors SOS Véto", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Dispensaire SPA", adr_city: "Orléans")
-Profile.create(role: "clinique", last_name: "Clin. Samatha", adr_city: "Orléans")
+Profile.create(role: "clinique", last_name: "NC", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Drs Alasnier", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Dr Blain", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Drs Bosquet-Picot", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. de Lamballe", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. St Jean", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Dr. Debricon", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. de la tangentielle", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. de la Cigogne", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Dr. Huck", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Dr Laverrière", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. De la tuilerie", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. des Glycines", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. de Beauvoir", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. des Acacias", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. de la Guignadière", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. d'Artois", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. Ligéria", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. des Coutures", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. des Portes de Tavers", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Hors SOS Véto", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Dispensaire SPA", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
+Profile.create(role: "clinique", last_name: "Clin. Samatha", adr_city: "Orléans", phone: Faker::Base.numerify('06 ## ## ## ##'))
 
 #Seed Gardes
 Duty.create(title: "15 Aout (du 14 du 16 aout 2017)", clinic: Profile.where(role: "clinique").sample, date_start: "14/08/2017", date_end: "16/08/2017")
@@ -53,7 +53,7 @@ Duty.create(title: "We du 12 au 13 Mai 2018", clinic: Profile.where(role: "clini
 
 # Create Clients
 5.times do
- Profile.create(role: "client", last_name: Faker::Name.name, adr_line1: Faker::Address.full_address, adr_city: Faker::Address.city, client_gender:["Male","Femelle"].sample, email:Faker::Internet.email )
+ Profile.create(role: "client", last_name: Faker::Name.name, adr_line1: Faker::Address.full_address, adr_city: Faker::Address.city, client_gender:["Male","Femelle"].sample, email:Faker::Internet.email, phone: Faker::Base.numerify('06 ## ## ## ##'))
 end
 
 # Create Pets

@@ -6,6 +6,8 @@
     <%= image_tag "avatar-doctor.png"  %>
   <% elsif  profile.role === "clinique" %>
     <%= image_tag "avatar-clinic.png"  %>
+  <% elsif  profile.role === "client" %>
+    <%= image_tag "avatar-client.png"  %>
   <% else %>
       <%= image_tag "dog.png"  %>
   <% end %>
