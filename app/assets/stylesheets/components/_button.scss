@@ -84,5 +84,17 @@
 }
 
 
+.btn-cell-theme {
+  background-color: $theme-dark;
+  color: white;
+  //margin: 0 19px;
+
+  &:hover {
+    background-color: white;
+    color: $theme-dark;
+  }
+
+}
+
 
 

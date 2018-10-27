@@ -1,29 +1,47 @@
+
+
 <div class="card-tabs">
-  <div class="tabs-header">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item active">
-        <a class="nav-link active" id="pet-tab" data-toggle="tab" href="#pet" role="tab" aria-controls="pet" aria-selected="true">Données Animal</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="client-tab" data-toggle="tab" href="#client" role="tab" aria-controls="client" aria-selected="true">Données Client</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" id="consultation-tab" data-toggle="tab" href="#consultation" role="tab" aria-controls="consultation" aria-selected="true">Consultation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="docs-tab" data-toggle="tab" href="#docs" role="tab" aria-controls="docs" aria-selected="false">Documents</a>
-      </li>
-    </ul>
-  </div>
 
-     <%= simple_form_for [@duty, @consultation] do |consultation_builder| %>
+    <%= simple_form_for [@duty, @consultation] do |consultation_builder| %>
 
-      <div class="tabs-form-header">
-        <%= consultation_builder.submit 'Save' %>
+
+    <div class="grid">
+      <div class="row">
+        <div class="col-xs-8  grid-cell-header">
+          <%= "Consultation du #{@consultation.created_at.strftime("%d/%m/%Y")} (Garde : #{@consultation.duty.clinic.full_name})" %>
+        </div>
+        <div class="col-xs-2 grid-cell-header text-center", style= "margin-left: 5px">
+          <%= link_to "Retour", duty_path(@duty), class: "btn-cell-theme" %>
+        </div>
+        <div class="col-xs-2 grid-cell-header text-center", style= "margin-left:  5px">
+           <%= consultation_builder.submit 'Enregistrer', class: "btn-cell-theme"%>
+        </div>
       </div>
+    </div>
 
 
-  <div class="tabs-content tab-content" id="myTabContent">
+
+
+
+    <div class="tabs-header">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item active">
+          <a class="nav-link active" id="pet-tab" data-toggle="tab" href="#pet" role="tab" aria-controls="pet" aria-selected="true">Données Animal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="client-tab" data-toggle="tab" href="#client" role="tab" aria-controls="client" aria-selected="true">Données Client</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" id="consultation-tab" data-toggle="tab" href="#consultation" role="tab" aria-controls="consultation" aria-selected="true">Consultation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="docs-tab" data-toggle="tab" href="#docs" role="tab" aria-controls="docs" aria-selected="false">Documents</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="tabs-content tab-content" id="myTabContent">
 
 
        <div class="tab-pane fade active in" id="pet" role="tabpanel" aria-labelledby="pet-tab">

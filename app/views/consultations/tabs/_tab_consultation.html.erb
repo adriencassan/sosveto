@@ -1,1 +1,6 @@
-_tab_consultation.html.erb
+
+    <div class="form-row">
+      <%= consultation_builder.label "Motif", class: "col-xs-2 form-label-xs" %>
+      <%= consultation_builder.input :consultation_motif, label: false, placeholder: "Motif de la consultation", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+    </div>
+

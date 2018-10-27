@@ -24,6 +24,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :pet_specie
       t.string :pet_gender
       t.integer :pet_age
+      t.integer :pet_birth
       t.references :pet_owner, index: true, foreign_key: {to_table: :profiles}
 
       t.timestamps
@@ -44,6 +45,15 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :consultation_motif
       t.string :consultation_commentaires
       t.string :consultation_suites
+
+      t.numeric :pet_weight, default: 0
+      t.numeric :pet_temperature, default: 0
+      t.string :pet_appetite
+      t.string :pet_thirst
+      t.string :pet_condition
+      t.string :pet_mucosa
+      t.string :pet_heart_rate
+      t.string :pet_dehydration
       t.string :report
       t.string :statut_envoi, default: "Non-envoyée"
       t.timestamps

@@ -1,21 +1,13 @@
-<div class="grid">
-  <div class="row">
-    <div class="container-form">
 
-        <div class="form-row">
-          <div class="col-xs-2 form-label-xs">
-            Rapport de consultation
-          </div>
-          <div class="col-xs-10 form-label-xs">
-            <% if @consultation.report.url.nil? %>
-              Vous n'avez pas encore généré de rapport
-            <% else %>
-              <a href="<%= make_https(@consultation.report.url ) %>" target="_blank" class="icon-download">
-                <i class="far fa-file" style="font-size: 20px"></i>
-              </a>
-             <% end %>
-          </div>
-        </div>
-    </div>
+<div class="form-row row">
+  <label class="col-xs-2 form-label-xs">Rapport de consultation</label>
+  <div class="col-xs-10 form-control form-control-xs">
+    <% if @consultation.report.url.nil? %>
+      Vous n'avez pas encore généré de rapport
+    <% else %>
+      <a href="<%= make_https(@consultation.report.url ) %>" target="_blank" class="icon-download">
+        <i class="far fa-file" style="font-size: 20px"></i>
+      </a>
+    <% end %>
   </div>
 </div>

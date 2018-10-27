@@ -1,5 +1,14 @@
 <%= consultation_builder.simple_fields_for :pet do |pet_builder| %>
-  <%= pet_builder.input :last_name %>
-  <%= pet_builder.input :pet_gender %>
+  <div class="form-row">
+    <%= pet_builder.label "Motif", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_gender, label: false, placeholder: "Sexe", collection: ["Male", "Femelle"], wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+  </div>
+  <div class="form-row">
+    <%= pet_builder.label "Espece", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_specie, label: false, placeholder: "Sexe", collection: ["Chat", "Chien","Lapin","Autres"], wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+  </div>
+  <div class="form-row">
+    <%= pet_builder.label "Age", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_age, label: false, wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+  </div>
 <% end %>
-

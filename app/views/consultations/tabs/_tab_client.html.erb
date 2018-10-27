@@ -1,4 +1,36 @@
 <%= consultation_builder.simple_fields_for :client do |client_builder| %>
-  <%= client_builder.input :first_name %>
-  <%= client_builder.input :last_name %>
+  <%= client_builder.error_notification %>
+    <div class="form-row">
+      <%= client_builder.label "Nom", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :last_name, label: false, placeholder: "Nom du client", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+    </div>
+    <div class="form-row">
+      <%= client_builder.label "Prenom", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :first_name, label: false, placeholder: "Prénom du client", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+    </div>
+    <div class="form-row">
+      <%= client_builder.label "Adresse", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :adr_line1, label: false, placeholder: "Adresse", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", id: "route"} %>
+    </div>
+    <div class="form-row">
+      <div class="col-xs-2 form-label-xs"></div>
+      <%= client_builder.input :adr_line2, label: false, placeholder: "Adresse", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", id: "route"} %>
+    </div>
+    <div class="form-row">
+      <%= client_builder.label "Ville", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :adr_zip, label: false, placeholder: "Code Postal", wrapper_html: {class: "col-xs-4"}, input_html: {class: "form-control-xs", id: "postal_code"} %>
+      <%= client_builder.input :adr_city, label: false, placeholder: "Ville", wrapper_html: {class: "col-xs-6"}, input_html: {class: "form-control-xs", id: "locality"} %>
+    </div>
+    <div class="form-row">
+      <%= client_builder.label "Pays", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :adr_country, as: :text, label: false, placeholder: "Pays", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", id: "country", rows: 1} %>
+    </div>
+    <div class="form-row">
+      <%= client_builder.label "Email", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :email, label: false, placeholder: "E-mail", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+    </div>
+    <div class="form-row">
+      <%= client_builder.label "Téléphone", class: "col-xs-2 form-label-xs" %>
+      <%= client_builder.input :phone, label: false, placeholder: "Téléphone", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+    </div>
 <% end %>
