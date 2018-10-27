@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.string "consultation_motif"
     t.string "consultation_commentaires"
     t.string "consultation_suites"
+    t.decimal "pet_weight", default: "0.0"
+    t.decimal "pet_temperature", default: "0.0"
+    t.string "pet_appetite"
+    t.string "pet_thirst"
+    t.string "pet_condition"
+    t.string "pet_mucosa"
+    t.string "pet_heart_rate"
+    t.string "pet_dehydration"
     t.string "report"
     t.string "statut_envoi", default: "Non-envoyée"
     t.datetime "created_at", null: false
@@ -68,6 +76,7 @@ ActiveRecord::Schema.define(version: 20181014135725) do
     t.string "pet_specie"
     t.string "pet_gender"
     t.integer "pet_age"
+    t.integer "pet_birth"
     t.bigint "pet_owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
