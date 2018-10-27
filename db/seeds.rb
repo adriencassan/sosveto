@@ -58,12 +58,12 @@ end
 
 # Create Pets
 6.times do
- Profile.create(role: "animal", last_name: Faker::Dog.name, pet_specie: ["Chien","Chat","Lapin"].sample, pet_age: (1..10).to_a.sample, pet_gender:["Male","Femelle"].sample, clinic: Profile.where(role: "clinique").sample, pet_owner: Profile.where(role: "client").sample  )
+ Profile.create(role: "animal", last_name: Faker::Dog.name, pet_specie: ["Chien","Chat","Lapin"].sample, pet_birth: Faker::Date.between(15.years.ago, Date.today), pet_gender:["Male","Femelle"].sample, clinic: Profile.where(role: "clinique").sample, pet_owner: Profile.where(role: "client").sample  )
 end
 
 
 20.times do
-  Consultation.create(duty: Duty.all.sample , pet: Profile.where(role: "animal").sample, client: Profile.where(role: "client").sample  ,consultation_motif: Faker::Lorem.paragraph ,consultation_commentaires:Faker::Lorem.paragraph,consultation_suites:Faker::Lorem.paragraph)
+  Consultation.create(duty: Duty.all.sample , pet: Profile.where(role: "animal").sample, client: Profile.where(role: "client").sample  ,comment_reason: Faker::Lorem.paragraph ,comment_description:Faker::Lorem.paragraph,comment_next_step:Faker::Lorem.paragraph)
 end
 
 

@@ -22,9 +22,14 @@ class InitateTables < ActiveRecord::Migration[5.1]
 
       # FOR PET
       t.string :pet_specie
+      t.string :pet_breed
       t.string :pet_gender
-      t.integer :pet_age
-      t.integer :pet_birth
+      t.boolean :pet_colour
+      t.date :pet_birth
+      t.boolean :pet_is_sterilized
+      t.boolean :pet_is_mixed_breed
+      t.boolean :pet_is_lof
+      t.boolean :pet_is_vaccinated
       t.references :pet_owner, index: true, foreign_key: {to_table: :profiles}
 
       t.timestamps
@@ -42,18 +47,23 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.references :duty, foreign_key: true
       t.references :pet, index: true, foreign_key: {to_table: :profiles}
       t.references :client, index: true, foreign_key: {to_table: :profiles}
-      t.string :consultation_motif
-      t.string :consultation_commentaires
-      t.string :consultation_suites
+
+      t.datetime :date, default: -> { 'CURRENT_TIMESTAMP' }
+
+      t.string :comment_reason
+      t.string :comment_description
+      t.string :comment_treatment
+      t.string :comment_next_step
 
       t.numeric :pet_weight, default: 0
       t.numeric :pet_temperature, default: 0
-      t.string :pet_appetite
-      t.string :pet_thirst
-      t.string :pet_condition
-      t.string :pet_mucosa
-      t.string :pet_heart_rate
-      t.string :pet_dehydration
+      t.string :pet_appetite, default: "NC"
+      t.string :pet_thirst, default: "NC"
+      t.string :pet_condition, default: "NC"
+      t.string :pet_mucosa, default: "NC"
+      t.string :pet_heart_rate, default: "NC"
+      t.string :pet_dehydration, default: "NC"
+
       t.string :report
       t.string :statut_envoi, default: "Non-envoyée"
       t.timestamps

@@ -1,6 +1,55 @@
+<div class="row form-row">
+  <%= consultation_builder.label "Poids", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_weight, label: false, wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
 
-    <div class="form-row">
-      <%= consultation_builder.label "Motif", class: "col-xs-2 form-label-xs" %>
-      <%= consultation_builder.input :consultation_motif, label: false, placeholder: "Motif de la consultation", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
-    </div>
+  <%= consultation_builder.label "Temperature (°C)", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_temperature, label: false, wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+  <%= consultation_builder.label "Pouls", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_heart_rate, label: false, collection: ["RAS","Faible","Filant"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+</div>
+
+<div class="form-row row">
+  <%= consultation_builder.label "Etat général", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_condition, label: false, collection: ["RAS","Abattu","Agité","Calme","Comateux","Convulsion","Décédé","Faible","NC"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+  <%= consultation_builder.label "Muqueuse", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_mucosa, label: false, collection: ["Roses","Cyanosées","Congestionnées","TRC Diminué","Ictériques","Pâles","NC"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+</div>
+
+<div class="form-row row">
+  <%= consultation_builder.label "Appetit", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_appetite, label: false, collection: ["RAS","Dysorexie","Anorexie","NC"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+  <%= consultation_builder.label "Soif", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_thirst, label: false, collection: ["RAS","Diminuée","Augmentée","NC"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+  <%= consultation_builder.label "Déshydratation", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :pet_dehydration, label: false, collection: ["Normal","DH 5%","DH 10%","Hyperhydraté","NC"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+</div>
+
+
+
+
+<div class="form-row row">
+  <%= consultation_builder.label "Motif", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :comment_reason, as: :text, label: false, placeholder: "Motif de la consultation", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", rows: 4} %>
+</div>
+
+<div class="form-row row">
+  <%= consultation_builder.label "Examens cliniques, complémentaires, hypothèses diagnostiques", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :comment_description, as: :text, label: false, placeholder: "Description des examens effectués lors de la consultation", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", rows: 4} %>
+</div>
+
+<div class="form-row row">
+  <%= consultation_builder.label "Traitement", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :comment_treatment, as: :text, label: false, placeholder: "Traitement", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", rows: 4} %>
+</div>
+
+<div class="form-row row">
+  <%= consultation_builder.label "Prochaines étapes", class: "col-xs-2 form-label-xs" %>
+  <%= consultation_builder.input :comment_next_step, as: :text, label: false, placeholder: "Prochaines étapes", wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs", rows: 4} %>
+</div>
 
