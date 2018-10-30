@@ -12,23 +12,38 @@
     </div>
 
     <div class="content-page-wrapper">
-        <div class="content-wrapper">
+      <div class="content-wrapper">
         <div class="grid">
           <div class="row">
             <div class="col-xs-2 grid-cell-theme-icons text-right" style="justify-content: flex-end">
               <i class="fas fa-angle-left text-right"></i>
-              <p>Mois précédents</p>
+              <%= link_to "Mois précédent", duties_path(month: @month.prev_month.strftime("%B-%Y")) %>
             </div>
             <div class="col-xs-8 grid-cell-theme">
               <div class="noflex">
                 <h5>Gardes</h5>
-                <h5 style=" font-size: 20px">Octobre 2018</h5>
+                <h5 style=" font-size: 20px"><%= @month.strftime("%B-%Y") %></h5>
               </div>
             </div>
             <div class="col-xs-2 grid-cell-theme-icons" style="justify-content: flex-start">
-              <p>Mois suivants</p>
+                <%= link_to "Mois suivant", duties_path(month: @month.next_month.strftime("%B-%Y")) %>
               <i class="fas fa-angle-right "></i>
             </div>
+          </div>
+
+          <div class="row <%= hidden unless current_user.profile.admin? %>">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+              <div class="card">
+                <div class="row">
+                  <div class="col-xs-9"><h4>Ajouter une nouvelle garde :</h4></div>
+                  <div class="col-xs-3">
+                    <%= link_to "Nouvelle garde", new_duty_path, class: "btn btn-theme-dark btn-round", style: "font-size: 16px; width: 100%" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-2"></div>
           </div>
 
           <div class="row">

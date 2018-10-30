@@ -1,0 +1,24 @@
+<div class="card">
+  <%= simple_form_for duty do |f| %>
+    <div class="row form-row">
+      <%= f.label "Du", class: "col-xs-2 form-label-xs" %>
+      <%= f.input :date_start, as: :string,  label: false, wrapper_html: {class: "col-xs-2 "}, input_html: {class: "form-control-xs datepicker", value: Date.today} %>
+
+      <%= f.label "au", class: "col-xs-2 form-label-xs" %>
+      <%= f.input :date_end, as: :string,  label: false, default: Date.today, wrapper_html: {class: "col-xs-2 "}, input_html: {class: "form-control-xs datepicker", value: Date.today} %>
+    </div>
+    <div class="row form-row">
+      <%= f.label "Nom", class: "col-xs-2 form-label-xs" %>
+      <%= f.input :title, as: :string,  label: false, wrapper_html: {class: "col-xs-10 "}, input_html: {class: "form-control-xs"} %>
+    </div>
+    <div class="row form-row">
+      <%= f.label "Vétérinaire de garde :", class: "col-xs-2 form-label-xs" %>
+      <%= f.association :clinic, collection: Clinic.duties_pool, selected: Clinic.default.id, label: false, label_method: :full_name, value_method: :id, wrapper_html: {class: "col-xs-10 "}, input_html: {class: "form-control-xs"} %>
+    </div>
+    <div class="row form-row">
+      <div class="form-actions">
+        <%= f.button :submit, "Créer", class: "btn btn-theme-dark btn-round", style: "font-size: 16px; width: 100px" %>
+      </div>
+  </div>
+  <% end %>
+</div>

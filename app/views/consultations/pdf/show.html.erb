@@ -1,3 +1,41 @@
+<div class="pdf-wrapper">
+  <div class="pdf-header">
+    <div class="grid">
+      <div class="row">
+        <div class="col-xs-2">
+          <%= wicked_pdf_image_tag "logo.png", height: 200 %>
+        </div>
+        <div class="col-xs-10">
+          <div >
+          <h4 style="font-size: 100px; font-weight: bold"> <%= "Garde du #{@consultation.duty.date_start.strftime("%d.%m")}-#{@consultation.duty.date_end.strftime("%d.%m.%y")}" %></h4>
+          <p style="font-size: 80px"><%= @consultation.duty.clinic.full_name %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= wicked_pdf_image_tag "logo.png" %>
-<h5 style="font-size: 100px">Je suis la</h5>
+  <div class="pdf-content">
+
+
+     <div class="row" style="border-bottom: 3px solid gray; height: 200px">
+      <div class="col-xs-2"  style="font-size: 40px">Poids :</div>
+      <div class="col-xs-2"  style="font-size: 40px"><%= @consultation.pet_weight %></div>
+
+      <div class="col-xs-2"  style="font-size: 40px">Temperature :</div>
+      <div class="col-xs-2"  style="font-size: 40px"><%= @consultation.pet_temperature %></div>
+
+       <div class="col-xs-2"  style="font-size: 40px">Rythme cardiaque :</div>
+      <div class="col-xs-2"  style="font-size: 40px"><%= @consultation.pet_heart_rate %></div>
+    </div>
+
+
+
+
+    <div class="row" style="border-bottom: 3px solid gray; height: 200px">
+      <div class="col-xs-2"  style="font-size: 40px">Motif :</div>
+      <div class="col-xs-10"  style="font-size: 40px"><%= @consultation.comment_reason %></div>
+    </div>
+  </div>
+</div>
+

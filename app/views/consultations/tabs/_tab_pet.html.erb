@@ -1,14 +1,37 @@
 <%= consultation_builder.simple_fields_for :pet do |pet_builder| %>
-  <div class="form-row">
-    <%= pet_builder.label "Motif", class: "col-xs-2 form-label-xs" %>
-    <%= pet_builder.input :pet_gender, label: false, placeholder: "Sexe", collection: ["Male", "Femelle"], wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+  <div class="row form-row">
+    <%= pet_builder.label "Date de naissance :", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_birth, as: :string,  label: false, wrapper_html: {class: "col-xs-2 "}, input_html: {class: "form-control-xs datepicker"} %>
   </div>
-  <div class="form-row">
+
+  <div class="row form-row">
+    <%= pet_builder.label "Sexe", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_gender, label: false, placeholder: "Sexe", collection: ["Male", "Femelle"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+  </div>
+  <div class="row form-row">
     <%= pet_builder.label "Espece", class: "col-xs-2 form-label-xs" %>
-    <%= pet_builder.input :pet_specie, label: false, placeholder: "Sexe", collection: ["Chat", "Chien","Lapin","Autres"], wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+    <%= pet_builder.input :pet_specie, label: false, placeholder: "Sexe", collection: ["Chat", "Chien","Lapin","Autres"], wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
   </div>
-  <div class="form-row">
-    <%= pet_builder.label "Age", class: "col-xs-2 form-label-xs" %>
-    <%= pet_builder.input :pet_age, label: false, wrapper_html: {class: "col-xs-10"}, input_html: {class: "form-control-xs"} %>
+  <div class="row form-row">
+    <%= pet_builder.label "Race", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_breed, label: false, wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+    <div class="col-xs-1"></div>
+    <%= pet_builder.label "Croisé ?", class: "col-xs-1 form-label-xs text-right" %>
+    <%= pet_builder.input :pet_is_mixed_breed, label: false, wrapper_html: {class: "col-xs-1 options"}, input_html: {class: "form-control-xs"} %>
+
+    <%= pet_builder.label "LOF ?", class: "col-xs-1 form-label-xs text-right" %>
+    <%= pet_builder.input :pet_is_lof, label: false, wrapper_html: {class: "col-xs-1 options"}, input_html: {class: "form-control-xs"} %>
+  </div>
+  <div class="row form-row">
+    <%= pet_builder.label "Couleur", class: "col-xs-2 form-label-xs" %>
+    <%= pet_builder.input :pet_colour, label: false, wrapper_html: {class: "col-xs-2"}, input_html: {class: "form-control-xs"} %>
+
+    <%= pet_builder.label "Stérilisé ?", class: "col-xs-2 form-label-xs text-right" %>
+    <%= pet_builder.input :pet_is_sterilized, label: false, wrapper_html: {class: "col-xs-1 options"}, input_html: {class: "form-control-xs"} %>
+
+    <%= pet_builder.label "Vacciné ?", class: "col-xs-1 form-label-xs text-right" %>
+    <%= pet_builder.input :pet_is_vaccinated, label: false, wrapper_html: {class: "col-xs-1 options"}, input_html: {class: "form-control-xs"} %>
   </div>
 <% end %>
+

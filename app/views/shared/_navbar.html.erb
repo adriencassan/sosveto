@@ -23,9 +23,6 @@
                   <i class="fa fa-user"></i> <%= t(".profile", default: "Mon profile") %>
             <% end %>
           </li>
-            <li>
-            <%= link_to "PDF", duty_consultation_pdf_path(duty_id:1,consultation_id: 20) %>
-          </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Déconnexion") %>

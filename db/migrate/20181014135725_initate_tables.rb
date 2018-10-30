@@ -24,7 +24,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :pet_specie
       t.string :pet_breed
       t.string :pet_gender
-      t.boolean :pet_colour
+      t.string :pet_colour
       t.date :pet_birth
       t.boolean :pet_is_sterilized
       t.boolean :pet_is_mixed_breed
@@ -65,7 +65,7 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.string :pet_dehydration, default: "NC"
 
       t.string :report
-      t.string :statut_envoi, default: "Non-envoyée"
+      t.string :report_status, default: "Non-envoyée"
       t.timestamps
     end
 

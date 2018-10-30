@@ -12,4 +12,8 @@ class ConsultationPolicy < ApplicationPolicy
   def pdf?
     true
   end
+
+  def update?
+    true
+  end
 end
