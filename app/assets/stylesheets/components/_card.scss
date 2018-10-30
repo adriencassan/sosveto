@@ -1,110 +1,52 @@
+.card-wrapper{
+  width: 100%;
+}
+
+
 .card {
-  //margin: 10px;
-  padding: 14px;
+  padding: 5px;
   background: $theme-foreground;
   border: 2px solid $theme-background;
   border-radius: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  width: 100%;
+  margin-bottom: 10px;
+  color: black;
 
   h4 {
     font-size: 16px;
     font-weight: bold;
-    color: $theme-dark;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-
-  p {
-     font-size: 14px;
-  }
-}
-
-.card.card-sm {
-  padding: 10px;
-  font-size: 14px;
-
-  h4 {
-    margin-bottom: 10px;
-  }
-}
-
-.card-header{
-   border-bottom: 1px solid $theme-dark;
-   margin-bottom: 5px;
-}
-
-
-// CARD BIO
-.card-bio {
-  //margin: 10px;
-  //padding: 10px;
-  height: 100%;
-  border-radius: 10px;
-  background: white;
-}
-
-.card-bio .header {
-  background-color: $theme-dark;
-  border-radius: 10px 10px 0 0 ;
-  position: relative;
-  height: 150px;
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-.card-bio .header .title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 40px;
-  color: white;
-  text-align: center;
-
- h4 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  h5 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-}
-
-.card-bio .header .avatar {
-  position: absolute;
-  top: 110px;
-  right: 70px;
-
-  img {
-    height: 80px;
-    width: 80px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
-  }
-}
-
-.card-bio .content {
-  padding: 10px;
-  color:  $theme-dark;
-
-  h5 {
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 12px;
     color: black;
+    text-align: left;
+    padding: 0;
+    margin: 0px;
+  }
+
+  p {
+    color: black;
+    font-size: 14px;
   }
 }
 
-.card-bio .header .role {
-  position: absolute;
-  top: 155px;
-  right: 100px;
-  color: $theme-dark;
-  font-size: 16px;
-  font-weight: bold;
+
+.card-click:hover{
+    background-color: $theme-light;
+    display: inline-block;
+    vertical-align: middle;
+
+    // transition effect
+    -webkit-transform:translate(0px,10px);
+    -moz-transform:translate(0px,10px);
+    -ms-transform:translate(0px,10px);
+    -o-transform:translate(0px,10px);
+    transform:translate(0px,10px);
+  }
+
+
+.card-link {
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }

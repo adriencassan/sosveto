@@ -16,6 +16,22 @@ class InitateTables < ActiveRecord::Migration[5.1]
       t.boolean :admin
       t.references :user, index: true, foreign_key: true
       t.references :clinic, index: true, foreign_key: {to_table: :profiles}
+
+      # FOR CLIENT
+      t.string :client_gender
+
+      # FOR PET
+      t.string :pet_specie
+      t.string :pet_breed
+      t.string :pet_gender
+      t.string :pet_colour
+      t.date :pet_birth
+      t.boolean :pet_is_sterilized
+      t.boolean :pet_is_mixed_breed
+      t.boolean :pet_is_lof
+      t.boolean :pet_is_vaccinated
+      t.references :pet_owner, index: true, foreign_key: {to_table: :profiles}
+
       t.timestamps
     end
 
@@ -29,20 +45,27 @@ class InitateTables < ActiveRecord::Migration[5.1]
 
     create_table :consultations do |t|
       t.references :duty, foreign_key: true
-      t.string :client_nom
-      t.string :client_adresse
-      t.string :client_ville
-      t.string :client_telephone
-      t.string :client_mail
-      t.string :animal_nom
-      t.string :animal_espece
-      t.integer :animal_ageA
-      t.integer :animal_ageM
-      t.string :animal_sexe
-      t.string :consultation_motif
-      t.string :consultation_commentaires
-      t.string :consultation_suites
-      t.string :statut_envoi, default: "Non-envoyée"
+      t.references :pet, index: true, foreign_key: {to_table: :profiles}
+      t.references :client, index: true, foreign_key: {to_table: :profiles}
+
+      t.datetime :date, default: -> { 'CURRENT_TIMESTAMP' }
+
+      t.string :comment_reason
+      t.string :comment_description
+      t.string :comment_treatment
+      t.string :comment_next_step
+
+      t.numeric :pet_weight, default: 0
+      t.numeric :pet_temperature, default: 0
+      t.string :pet_appetite, default: "NC"
+      t.string :pet_thirst, default: "NC"
+      t.string :pet_condition, default: "NC"
+      t.string :pet_mucosa, default: "NC"
+      t.string :pet_heart_rate, default: "NC"
+      t.string :pet_dehydration, default: "NC"
+
+      t.string :report
+      t.string :report_status, default: "Non-envoyée"
       t.timestamps
     end
 

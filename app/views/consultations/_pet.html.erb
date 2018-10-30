@@ -1,0 +1,89 @@
+<div class="card-bio">
+  <div class="header">
+
+    <div class="title">
+      <h4><%= pet.full_name %></h4>
+      <h5><%= pet.age_in_string %></h5>
+    </div>
+
+    <div class="avatar">
+      <%= render 'shared/avatar', profile: pet %>
+    </div>
+
+    <div class="role">
+      <%= pet.role.upcase %>
+    </div>
+  </div>
+
+
+
+  <div class="content">
+
+    <!-- RELATIONS -->
+    <div class="card-bio-content-group">
+
+      <div class="title">Relations</div>
+
+      <div class="content">
+        <div class="row" style= "margin-bottom: 10px">
+          <div class="col-xs-4"><p>Propriétaire</p></div>
+          <div class="col-xs-8">
+            <div class="avatar-block">
+              <%= render 'shared/avatar', profile: pet.pet_owner %>
+              <div class="text">
+                <h6><%= pet.pet_owner.full_name %></h6>
+                <p><%= "#{pet.pet_owner.adr_city}, #{pet.pet_owner.phone}" %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4"><p>Confrère</p></div>
+          <div class="col-xs-8">
+            <div class="avatar-block">
+              <%= render 'shared/avatar', profile: pet.clinic %>
+              <div class="text">
+                <h6><%= pet.clinic.full_name %></h6>
+                <p><%= "#{pet.clinic.adr_city}, #{pet.clinic.phone}" %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REPORT -->
+    <div class="card-bio-content-group">
+
+      <div class="title">Rapport de consultation</div>
+
+      <div class="content">
+        <div class="row">
+          <div class="col-xs-4">
+            <p>Rapport de consultation</p>
+          </div>
+          <div class="col-xs-8">
+            <% if @consultation.report.url.nil? %>
+              <p>Vous n'avez pas encore généré de rapport</p>
+
+              <%= link_to "Générer le rapport", duty_consultation_pdf_path(@duty, @consultation) %>
+            <% else %>
+              <a href="<%= make_https(@consultation.report.url ) %>" target="_blank" class="icon-download">
+                <i class="far fa-file" style="font-size: 20px"></i>
+              </a>
+              <div>
+              <%= link_to "Regénérer le rapport", duty_consultation_pdf_path(@duty, @consultation) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+

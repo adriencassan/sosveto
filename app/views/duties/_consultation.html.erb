@@ -1,0 +1,43 @@
+<div class="card card-click" style="height: 50px">
+  <a href=<%="#{consultation.duty.id}/consultations/#{consultation.id}"%> class="card-link">
+    <div class="grid">
+      <div class="row">
+        <div class="col-xs-3">
+           <h4><%= consultation.created_at.strftime("%d.%m %Hh%M") %></h4>
+        </div>
+        <div class="col-xs-3">
+          <div class="avatar-block">
+            <%= render 'shared/avatar', profile: consultation.client %>
+            <div class="text">
+              <h6><%= consultation.client.full_name %></h6>
+              <p><%= consultation.client.phone %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="avatar-block">
+            <%= render 'shared/avatar', profile: consultation.pet %>
+            <div class="text">
+              <h6><%= consultation.pet.full_name %></h6>
+              <p><%= consultation.pet.pet_specie %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3">
+          <% if consultation.pet.clinic.nil? %>
+            <p><%= "Renseigner l'information dans la fiche animal" %></p>
+          <% else %>
+            <div class="avatar-block">
+              <%= render 'shared/avatar', profile: consultation.pet.clinic %>
+              <div class="text">
+                <h6><%= consultation.pet.clinic.full_name  %></h6>
+                <p><%=consultation.pet.clinic.phone  %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

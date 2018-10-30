@@ -33,6 +33,8 @@ class ConsultationsController < ApplicationController
 
   def update
     @consultation = Consultation.find(params[:id])
+     authorize @consultation
+
     if @consultation.update(consultation_params)
       redirect_to duty_path(@consultation.duty)
     else
@@ -40,10 +42,35 @@ class ConsultationsController < ApplicationController
     end
   end
 
+  def pdf
+    @duty=Duty.find(params[:duty_id])
+    @consultation = Consultation.find(params[:consultation_id])
+    authorize @consultation
+
+    pdf_file = render_to_string pdf: "some_file_name", template: "consultations/pdf/show.html.erb", layout: 'pdf.html.erb', page_size: "A4", encoding: "UTF-8"
+
+    # Write it to tempfile
+    tempfile = Tempfile.new(['invoice', '.pdf'], Rails.root.join('tmp'))
+    tempfile.binmode
+    tempfile.write pdf_file
+    tempfile.close
+
+    #File.open(tempfile.path)
+
+    # Attach that tempfile to the invoice
+    unless pdf_file.blank?
+        #@consultation.clear
+        @consultation.update(report: File.open(tempfile.path))
+        tempfile.unlink
+    end
+
+    redirect_to duty_consultation_path(@duty, @consultation)
+  end
+
 
   protected
 
   def consultation_params
-    params.require(:consultation).permit(:client_nom, :client_adresse, :client_ville, :client_telephone, :client_mail, :client_clinique_id, :animal_nom, :animal_espece, :animal_sexe, :animal_ageA, :animal_ageM, :consultation_motif, :consultation_commentaires, :consultation_suites)
+    params.require(:consultation).permit(:date, :comment_reason, :comment_description, :comment_treatment, :comment_next_step, :pet_weight, :pet_temperature, :pet_appetite, :pet_thirst, :pet_condition, :pet_mucosa, :pet_heart_rate, :pet_dehydration, :report, :report_cache, :report_status, client_attributes: [:id, :last_name, :first_name, :adr_line1, :adr_line2, :adr_zip, :adr_city, :adr_country, :email, :phone], pet_attributes: [:id, :pet_birth, :pet_gender, :pet_specie, :pet_breed, :pet_is_mixed_breed, :pet_is_lof, :pet_colour, :pet_is_sterilized, :pet_is_vaccinated ] )
   end
 end

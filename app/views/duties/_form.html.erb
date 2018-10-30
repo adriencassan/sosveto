@@ -12,16 +12,17 @@
     </div>
 
     <div class="content-page-wrapper">
-        <div class="content-wrapper">
+      <div class="content-wrapper">
         <div class="grid">
           <div class="row">
             <div class="col-xs-2 grid-cell-theme-icons text-right" style="justify-content: flex-end">
               <i class="fas fa-angle-left text-right"></i>
-              <%= link_to "Retour", duties_path, style:"font-size: 16px; margin-left: 10px;" %>
+              <%= link_to "Retour", duties_path %>
             </div>
             <div class="col-xs-8 grid-cell-theme">
               <div class="noflex">
-                <h5 style=" font-size: 20px"><%= "Garde du #{@duty.date_start.strftime("%d.%m")}-#{@duty.date_end.strftime("%d.%m.%y")}" %></h5>
+                <h5>Gardes</h5>
+                <h5 style=" font-size: 20px">Créer une nouvelle garde</h5>
               </div>
             </div>
             <div class="col-xs-2 grid-cell-theme-icons" style="justify-content: flex-start">
@@ -31,9 +32,7 @@
           <div class="row">
             <div class="col-xs-2"></div>
             <div class="col-xs-8">
-              <% @duty.consultations.each do |consultation| %>
-                <%= render 'duties/consultation', consultation: consultation%>
-              <% end %>
+              <%= render 'duties/form-card', duty: duty %>
             </div>
             <div class="col-xs-2"></div>
           </div>

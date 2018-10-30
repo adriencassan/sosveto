@@ -4,21 +4,31 @@
 
 .row {
    margin: 0px ;
+   display: flex;
    align-items: center;
 }
 
 // header
 .grid-row-header {
-  display: flex;
-  align-items: center;
   height: 40px;
-  border-radius: 20px;
+  margin-bottom: 10px;
+  align-items: center;
   padding: 5px;
   margin-bottom: 10px;
-  font-size: 14px;
-  color: white;
-  background: $theme-dark;
 
+  a{
+    padding-top: 5px;
+  }
+}
+
+.grid-cell-header {
+  background: $theme-dark;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 35px;
+  padding: 7px 10px;
 }
 
 // header action
@@ -36,6 +46,12 @@
     font-size: 10px;
   }
 }
+//
+
+.row {
+  margin-bottom: 5px;
+}
+
 
 // container to display rows
 .grid-rows {
@@ -44,25 +60,87 @@
   margin:0px;
   overflow: scroll;
 }
-
-
 // row
 .grid-row {
   display: flex;
   align-items: center;
   height: 40px;
-  border-radius: 20px;
-  background: linear-gradient(rgba(244, 244, 244,0.6), rgba(244, 244, 244,0.3));
   position: relative;
   padding: 5px;
   margin-bottom: 10px;
-  //box-shadow: 2px 2px 2px 1px grey;
+
+
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 10px;
+    margin: 0px;
+  }
 }
 
-.grid-row p{
-  font-size: 10px;
-  margin: 0px;
+
+.grid-cell-theme {
+  //width: 100%;
+   height: 40px;
+  background: $theme-dark;
+  border-radius: 20px;
+  display: flex;
+ justify-content: space-around;
+  align-items: center;
+
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    //text-align: center;
+    color: white;
+  }
+
+  .noflex {
+    display: block;
+    text-align: center;
+    //justify-content: space-around;
+  }
+
 }
+
+.grid-cell-theme-icons{
+  font-size: 30px;
+  color: $theme-dark;
+  display: flex;
+
+  a{
+    font-size: 16px;
+    width: 80px;
+    margin: 0 5px;
+    text-align: center;
+  }
+}
+
+.grid-cell-white-icons{
+  font-size: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+
+  p{
+    font-size: 16px;
+    width: 80px;
+    margin: 0 5px;
+    text-align: center;
+  }
+
+  a {
+     color: white;
+  }
+}
+
 
 
 
@@ -73,6 +151,7 @@
 
   p {
     font-size: 12px;
+
     margin-left: 10px;
   }
 }

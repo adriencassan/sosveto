@@ -39,3 +39,33 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+
+.avatar-block {
+  height: 30px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid $medium-gray;
+    margin-right: 10px;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    font-size: 10px;
+    //font-weight: bold;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
+}

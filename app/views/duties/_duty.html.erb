@@ -1,0 +1,24 @@
+<div class="card card-click" style="height: 60px">
+  <a href=<%="duties/#{duty.id}"%> class="card-link">
+    <div class="grid">
+      <div class="row">
+        <div class="col-xs-5">
+          <h4><%= "Garde du #{duty.date_start.strftime("%d.%m")}-#{duty.date_end.strftime("%d.%m.%y")}" %></h4>
+
+        </div>
+        <div class="col-xs-4">
+            <div class="avatar-block">
+              <%= render 'shared/avatar', profile: duty.clinic %>
+              <div class="text">
+                <h6><%= duty.clinic.full_name %></h6>
+                <p><%= duty.clinic.phone %></p>
+              </div>
+            </div>
+        </div>
+        <div class="col-xs-3 grid-cell">
+          <p><%= "Aucun de vos patients traités" %></p>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

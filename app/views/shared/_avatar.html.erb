@@ -6,6 +6,14 @@
     <%= image_tag "avatar-doctor.png"  %>
   <% elsif  profile.role === "clinique" %>
     <%= image_tag "avatar-clinic.png"  %>
+  <% elsif  profile.role === "client" %>
+    <%= image_tag "avatar-client.png"  %>
+  <% elsif  profile.role === "animal" && profile.pet_specie === "Chien" %>
+    <%= image_tag "avatar-dog.png"  %>
+  <% elsif  profile.role === "animal" && profile.pet_specie === "Chat" %>
+    <%= image_tag "avatar-cat.png"  %>
+  <% elsif  profile.role === "animal" && profile.pet_specie === "Lapin" %>
+    <%= image_tag "avatar-rabbit.png"  %>
   <% else %>
-      <%= image_tag "dog.png"  %>
+      <%= image_tag "avatar-dog.png"  %>
   <% end %>
